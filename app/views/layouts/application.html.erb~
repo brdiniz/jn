@@ -35,7 +35,7 @@
         <%= yield %>
         <div id="footer">
           <div class="block">
-            <p>&nbsp;</p>
+            <p>Copyright &copy; <%= Time.now.year %> Your Site.</p>
           </div>      
         </div>
       </div>

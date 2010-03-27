@@ -1,0 +1,18 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "Alterar " + eval("@#{model}.name"), "#" %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"></h2>
+    <div class="inner">
+			<% form_for "#{model}".to_sym, eval("@#{model}"), :url => send("#{model}_path"), :html => { :class => :form, :method => "put"  } do |f| -%>
+        <%= render :partial => "form", :locals => {:f => f} %>
+      <% end -%>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'layouts/sidebar', :locals => {:model => model, :menu_visible => true }) -%>
+

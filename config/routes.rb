@@ -1,5 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :jobs
+  map.resources :accounts do |account|
+    account.associate_account "associate_account", :controller => "accounts", :action => "associate_account", :method => {:get, :post}
+    account.disconnect_account "disconnect_account/:associate_account_login/:associate_account_email_main", :controller => "accounts", :action => "disconnect_account", :method => "put"
+    account.resources :jobs
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
