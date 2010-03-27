@@ -1,0 +1,21 @@
+      <table class="table">
+        <tr>
+          <th class="first"><%= t("activerecord.attributes.people.tipe", :default => t("activerecord.labels.tipe", :default => "Type"))  %></th>
+          <th><%= t("activerecord.attributes.people.name", :default => t("activerecord.labels.name", :default => "Name")) %></th>
+          <th><%= t("activerecord.attributes.people.email", :default => t("activerecord.labels.email", :default => "E-mail")) %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @people.sort.each do |person| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td><%= person.tipe %></td>
+          <td><%= link_to person.name, person_path(person) %></td>
+          <td><%= person.email %></td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", person_path(person) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_person_path(person) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", person_path(person), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+          </td>
+        </tr>
+        <% end -%>
+      </table>
+

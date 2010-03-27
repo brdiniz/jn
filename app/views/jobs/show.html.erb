@@ -1,0 +1,39 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", jobs_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_job_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", job_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.job.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</b>
+          <%= @job.title %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.job.salary_info", :default => t("activerecord.labels.salary_info", :default => "Salary info")) %>:</b>
+          <%= @job.salary_info %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.job.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</b>
+          <%= @job.description %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.job.ref_info", :default => t("activerecord.labels.ref_info", :default => "Ref info")) %>:</b>
+          <%= @job.ref_info %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_job_path(@job), :class => "button" %> 
+        <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", job_path(@job), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

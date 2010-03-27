@@ -1,0 +1,11 @@
+<div class="block">
+  <h3>Ações</h3>
+  <ul class="navigation">
+    <% if menu_visible %>
+      <li><%= link_to "Listar " + t("activerecord.models.#{model.pluralize}"), send("#{model.pluralize}_path")  %></li>
+      <li><%= link_to "Criar " + t("activerecord.models.#{model}"), send("new_#{model}_path")  %></li>
+    <% end %>
+    <%= render(:partial => 'sidebar') -%>
+  </ul>
+</div>
+

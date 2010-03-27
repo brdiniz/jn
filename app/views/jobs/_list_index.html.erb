@@ -1,0 +1,21 @@
+      <table class="table">
+        <tr>
+          <th class="first">Referencia</th>
+          <th>Título</th>
+          <th>E-mail</th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @jobs.each do |job| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td><%= link_to job.ref_info, job %></td>
+          <td><%= job.title %></td>
+          <td><%= job.email %></td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", job %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_job_path(job) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", job, :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+          </td>
+        </tr>
+        <% end -%>
+      </table>
+
