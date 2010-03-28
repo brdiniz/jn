@@ -23,13 +23,11 @@
 			    <table class="table" id="professionals_table">
 						<th class="first">Nome</th>
 						<th class="last"></th>
-						<% @account.companies.each do |company| %>
-							<tr class='<%= cycle("odd", "even") %>'>
-								<td><%= company.name %></td>
-								<td class="last">
-									<%= link_to "Desassociar", "#" %>
-								</td>
-							</tr>
-             <% end %>
+						<tr class='<%= cycle("odd", "even") %>'>
+							<td><%= @account.company.name %></td>
+							<td class="last">
+								<%= link_to "Desassociar", "#" %>
+							</td>
+						</tr>
 			    </table>
        <% end %>

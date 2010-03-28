@@ -8,4 +8,8 @@ class Account < ActiveRecord::Base
   def <=>(other)
     self.name <=> other.name
   end
+	
+	def associate_professional
+     self.professionals << Professional.find_by_login(self.login_associate)
+  end
 end

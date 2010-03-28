@@ -1,7 +1,7 @@
 <div class="block">
   <div class="secondary-navigation">
     <ul class="wat-cf">
-      <li class="first"><%= link_to t("activerecord.models.account") + " " + eval("@account.name"), "#" %></li>
+      <li class="first"><%= link_to t("activerecord.models.account") + " " + eval("@account.name"), account_path(@account) %></li>
       <li class="last active"><%= link_to "Associar a Conta", "#" %></li>
     </ul>
   </div>
@@ -25,7 +25,7 @@
 	  <button class="button" type="submit">
 	    <%= image_tag("web-app-theme/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
 	  </button>  
-	  <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.cancel", :default => "Cancel")}")} #{t("web-app-theme.cancel", :default => "Cancel")}", @account, :class => "button" %> 
+	  <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.cancel", :default => "Cancel")}")} #{t("web-app-theme.cancel", :default => "Cancel")}", account_path(@account), :class => "button" %> 
 	</div>
       <% end -%>
 

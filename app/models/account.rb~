@@ -1,6 +1,5 @@
 class Account < ActiveRecord::Base
   KINDS = {"Empresa" => "Company", "Profissional" => "Professional" }
-  has_many :jobs, :dependent => :destroy
    
   attr_accessor :kind
   attr_accessor :login_associate
@@ -8,5 +7,9 @@ class Account < ActiveRecord::Base
 
   def <=>(other)
     self.name <=> other.name
+  end
+	
+	def associate_professional
+     self.professionals << Professional.find_by_login(self.login_associate)
   end
 end

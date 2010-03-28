@@ -1,7 +1,7 @@
 <div class="block">
   <div class="secondary-navigation">
     <ul class="wat-cf">
-      <li class="first"><%= link_to t("activerecord.models.account") + " " + eval("@account.name"), "#" %></li>
+      <li class="first"><%= link_to t("activerecord.models.account") + " " + eval("@account.name"), account_path(@account) %></li>
       <li class="last active"><%= link_to "Associar a Conta", "#" %></li>
     </ul>
   </div>
@@ -9,7 +9,7 @@
     <h2 class="title"></h2>
     <div class="inner">
 
-      <% form_for :account, :url => account_associate_account_path(@account), :html => { :class => :form, :method => "put" } do |f| -%>
+      <% form_for :account, :url => account_associate_professional_path(@account), :html => { :class => :form, :method => "put" } do |f| -%>
 
 	  <div class="group">
 	    <%= f.label :login_associate, t("activerecord.attributes.account.login", :default => "Login"), :class => :label %>

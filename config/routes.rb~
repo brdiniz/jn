@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :jobs
   map.resources :accounts do |account|
-    account.associate_account "associate_account", :controller => "accounts", :action => "associate_account", :method => {:get, :post}
-    account.disconnect_account "disconnect_account/:associate_account_login/:associate_account_email_main", :controller => "accounts", :action => "disconnect_account", :method => "put"
+    account.associate_professional "associate_professional", :controller => "accounts", :action => "associate_professional", :method => {:get, :post}
+    account.disconnect_professional "disconnect_professinal/:associate_account_login/:associate_account_email", :controller => "accounts", :action => "disconnect_account", :method => "put"
     account.resources :jobs
   end
 

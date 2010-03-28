@@ -1,0 +1,3 @@
+class Company < Account
+  has_many :jobs, :dependent => :destroy
+end
