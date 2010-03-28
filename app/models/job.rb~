@@ -1,5 +1,6 @@
 class Job < ActiveRecord::Base
-  belongs_to :account
+  belongs_to :company, :primary_key => 'account_id', :class_name => 'Company'
+
   def name
     self.ref_info
   end

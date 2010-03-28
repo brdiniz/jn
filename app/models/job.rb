@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-  belongs_to :account
+  belongs_to :company
 
   def name
     self.ref_info
