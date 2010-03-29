@@ -1,7 +1,7 @@
 <div class="block">
   <div class="secondary-navigation">
     <ul class="wat-cf">
-			<li class="first active"><%= link_to "Listagem de " + t("activerecord.models.jobs"), "#"  %></li>
+			<li class="first active"><%= link_to "Listagem de " + t("activerecord.models.#{model.pluralize}"), "#"  %></li>
     </ul>
   </div>
   <div class="content">

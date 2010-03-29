@@ -1,7 +1,3 @@
-        <p>
-          <b><%= t("activerecord.attributes.job.ref_info", :default => t("activerecord.labels.ref_info", :default => "Ref info")) %>:</b>
-          <%= @job.ref_info %>
-        </p>
 
         <p>
           <b><%= t("activerecord.attributes.job.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</b>
@@ -16,4 +12,9 @@
         <p>
           <b><%= t("activerecord.attributes.job.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</b>
           <br /><br /><%= @job.description.gsub("\r\n", "<br />") %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.job.ref_info", :default => t("activerecord.labels.ref_info", :default => "Ref info")) %>:</b>
+          <%= @job.ref_info %>
         </p>

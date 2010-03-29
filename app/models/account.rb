@@ -12,4 +12,10 @@ class Account < ActiveRecord::Base
 	def associate_professional
      self.professionals << Professional.find_by_login(self.login_associate)
   end
+
+  def disconnect_professional
+    p = Professional.find_by_login(self.login_associate)
+		self.professionals.delete(p)
+	  return true
+  end
 end

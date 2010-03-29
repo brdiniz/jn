@@ -1,3 +1,4 @@
-<% if @account && !@account.new_record? %>
+<% if @account.class.name == "Company" && !@account.new_record? %>
   <li><%= link_to "Associar conta", account_associate_professional_path(@account) %></li>
+  <li><%= link_to "Criar vaga", new_account_job_path(@account) %></li>
 <% end %>

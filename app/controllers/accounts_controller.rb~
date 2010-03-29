@@ -5,13 +5,21 @@ class AccountsController < InheritedResources::Base
     if request.put?
       @account.update_attributes(params[:account])
       if @account.associate_professional
-        flash[:notice] = "Associação de Usuário realizada com sucesso!"
+        flash[:notice] = "Associação de Conta realizada com sucesso!"
         redirect_to(account_path(@account))
       end
     end
   end
 
   def disconnect_professional
+    @account = Account.find(params[:account_id])
+		@account.update_attributes(params)
+	  if @account.disconnect_professional
+			flash[:notice] = "Desassociação de Conta realizada com sucesso!"
+			redirect_to(account_path(@account))
+		else
+			render :action => "show"
+		end	
   end
 
   def create

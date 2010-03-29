@@ -1,21 +1,17 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
- 	  <th><%= t("activerecord.attributes.account.name", :default => t("activerecord.labels.name", :default => "Name")) %></th>
- 	  <th><%= t("activerecord.attributes.account.email_main", :default => t("activerecord.labels.email_main", :default => "Email Main")) %></th>
+ 	  			<th>Nome</th>
+ 	  			<th>Login</th>
+					<th>Tipo</th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @accounts.sort.each do |account| -%>
         <tr class="<%= cycle("odd", "even") %>">
-          <td>
-            <%= account.id %>
-          </td>
-	  <td>
-	    <%= link_to account.name, account_path(account) %>
- 	  </td>
-	  <td>
-            <%= account.email_main %>
-          </td>
+          <td><%= account.id %></td>
+					<td><%= link_to account.name, account_path(account) %></td>
+          <td><%= account.login %></td>
+				  <td><%= account.class.name %></td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", account_path(account) %> |
             <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_account_path(account) %> |

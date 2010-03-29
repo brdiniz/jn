@@ -1,1 +1,1 @@
-<%= render :partial => "layouts/index", :locals => {:model => "job" }  %>
+<%= render :partial => "layouts/show", :locals => {:model => "job" }  %>

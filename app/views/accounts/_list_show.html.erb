@@ -12,7 +12,29 @@
 							<td><%= professional.id %></td>
 							<td><%= link_to professional.name, account_path(professional) %></td>
 							<td class="last">
-								<%= link_to "Desassociar", "#" %>
+								<%= link_to "Desassociar", account_disconnect_professional_path(@account, professional.login) %>
+							</td>
+						</tr>
+					<% end %>
+	      </table>
+
+				<br />
+				<h1>Vagas</h1>
+
+	      <table class="table" id="jobs_table">
+          <th class="first">Referencia</th>
+          <th>Título</th>
+          <th>E-mail para contato</th>
+					<th class="last"></th>
+					<% @account.jobs.each do |job| %>
+						<tr class='<%= cycle("odd", "even") %>'>
+          		<td><%= link_to job.ref_info, account_job_path(@account, job) %></td>
+          		<td><%= job.title %></td>
+          		<td><%= job.email %></td>
+							<td class="last">
+								<%= link_to "#{t("web-app-theme.show", :default => "Show")}", account_job_path(@account, job) %> |
+            		<%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_account_job_path(@account, job) %> |
+            		<%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", account_job_path(@account, job), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
 							</td>
 						</tr>
 					<% end %>
@@ -27,6 +49,8 @@
 							<tr class='<%= cycle("odd", "even") %>'>
 								<td><%= company.name %></td>
 								<td class="last">
+									<%= link_to "#{t("web-app-theme.show", :default => "Show")}", account_path(company) %> |
+									<%= link_to "Criar vaga", new_account_job_path(company) %> | 
 									<%= link_to "Desassociar", "#" %>
 								</td>
 							</tr>
