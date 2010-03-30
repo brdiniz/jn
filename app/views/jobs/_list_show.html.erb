@@ -6,7 +6,7 @@
 					<th>Data da expiração</th>
 					<th>E-mail</th>
 					<th>Status</th>
-					<th class="last"></th>
+					<th></th>
 					<% @job.listings.each do |listing| %>
 						<tr class='<%= cycle("odd", "even") %>'>
 							<td><%= link_to listing.actived_at.to_date, account_job_listing_path(@account, @job, listing) %></td>
@@ -14,6 +14,8 @@
 							<td><%= listing.email %></td>
 							<td><%= t("activerecord.attributes.listing.active.#{listing.active.to_s}", :default => listing.active.to_s) %></td>
 							<td class="last">
+								<%= link_to "Ativar", account_job_listing_enable_path(@account, @job, listing), :method => "put" if !listing.active %>
+								<%= link_to "Desativar", account_job_listing_disable_path(@account, @job, listing), :method => "put" if listing.active %> |
 								<%= link_to "#{t("web-app-theme.show", :default => "Show")}", account_job_listing_path(@account, @job, listing) %> |
             		<%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_account_job_listing_path(@account, @job, listing) %> |
             		<%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", account_job_listing_path(@account, @job, listing), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>

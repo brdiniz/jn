@@ -11,4 +11,15 @@ class Listing < ActiveRecord::Base
   def active_listing
     self.actived_at = Time.now.to_date
   end
+  
+  def disable_listing
+    self.day_count = -1
+    self.save
+  end
+  
+  def enable_listing
+    active_listing
+    self.day_count = 10
+    self.save
+  end
 end

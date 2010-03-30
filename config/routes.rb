@@ -4,7 +4,10 @@ ActionController::Routing::Routes.draw do |map|
     account.disconnect_professional "disconnect_professional/:login_associate", :controller => "accounts", :action => "disconnect_professional", :method => "put"
 		account.resources :emails
     account.resources :jobs do |job|
-      job.resources :listings
+      job.resources :listings do |listing|
+        listing.enable "enable", :controller => "listings", :action => "enable_listing", :method => "put"
+        listing.disable "disable", :controller => "listings", :action => "disable_listing", :method => "put"
+      end
 		end
   end
 
