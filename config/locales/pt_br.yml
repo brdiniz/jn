@@ -49,6 +49,10 @@ pt_br:
       jobs: Vagas
     attributes:
       listing:
+        region: Região
+        location: Localização
+        email: E-mail
+        day_count: Quantidade de dias para o anuncio
         active:
           "true": Ativada
           "false": Desativada
@@ -59,16 +63,9 @@ pt_br:
         ref_info: Referência
       account:
         kind: "Tipo"
-        maturity_date: Data de vencimento
-        price: Valor da conta
-        box_id: Caixa
-        document: Documento
-        person_id: Nome
-        situation_id: Status
-        bank_account_id: Conta Bancária
-        contract_id: Contrato
-        payment_date: Data do pagamento
-        payment_price: Valor do pagamento
+        name: Nome
+        email_main: E-mail
+        password: senha
     errors:
       template:
         body: "Os seguintes erros impediram esta operação:"
