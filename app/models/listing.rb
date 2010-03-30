@@ -1,7 +1,7 @@
 class Listing < ActiveRecord::Base
   belongs_to :job
   before_create :active_listing 
-	validates_numericality_of :day_count, :less_than_or_equal_to => 30
+	validates_numericality_of :day_count, :less_than_or_equal_to => 30, :greater_than_or_equal_to => 10, :on => :create
   
   def active
     d = self.actived_at.to_date - Time.now.to_date
@@ -21,5 +21,9 @@ class Listing < ActiveRecord::Base
     active_listing
     self.day_count = 10
     self.save!
+  end
+  
+  def expirate_date
+    self.actived_at.to_date + self.day_count.days 
   end
 end

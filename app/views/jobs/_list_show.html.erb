@@ -10,7 +10,7 @@
 					<% @job.listings.each do |listing| %>
 						<tr class='<%= cycle("odd", "even") %>'>
 							<td><%= link_to listing.actived_at.to_date, account_job_listing_path(@account, @job, listing) %></td>
-							<td><%= listing.actived_at.to_date + listing.day_count.days %></td>
+							<td><%= listing.expirate_date %></td>
 							<td><%= listing.email %></td>
 							<td><%= t("activerecord.attributes.listing.active.#{listing.active.to_s}", :default => listing.active.to_s) %></td>
 							<td class="last">

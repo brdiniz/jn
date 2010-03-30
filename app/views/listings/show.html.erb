@@ -30,8 +30,13 @@
         </p>
 
         <p>
-          <b><%= t("activerecord.attributes.listing.day_count", :default => t("activerecord.labels.day_count", :default => "Day count")) %>:</b>
-          <%= @listing.day_count %>
+          <b>Data da ativação:</b>
+          <%= @listing.actived_at %>
+        </p>
+
+        <p>
+          <b>Data da expiração:</b>
+          <%= @listing.expirate_date %>
         </p>
       <div class="wat-cf">
         <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_account_job_listing_path(@account, @job, @listing), :class => "button" %> 

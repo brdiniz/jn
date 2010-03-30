@@ -19,11 +19,11 @@ describe Listing do
   
   it "should enable and disable listing" do
     l = Factory(:listing, :day_count => 30)
-    l.disable_listing
-    l.active.should_not be_true
-    l.day_count.should == -1
-    l.enable_listing
-    l.active.should be_true
-    l.day_count.should == 10
+    Listing.find(l.id).disable_listing
+    Listing.find(l.id).active.should_not be_true
+    Listing.find(l.id).day_count.should == -1
+    Listing.find(l.id).enable_listing
+    Listing.find(l.id).active.should be_true
+    Listing.find(l.id).day_count.should == 10
   end
 end
