@@ -10,10 +10,10 @@ describe Listing do
     l = Factory(:listing, :day_count => 10)
     l.active.should be_true
     
-    l.created_at = l.created_at.to_date - 10.days
+    l.actived_at = l.actived_at.to_date - 10.days
     l.active.should be_true
     
-    l.created_at = l.created_at.to_date - 1.days
+    l.actived_at = l.actived_at.to_date - 1.days
     l.active.should be_false
   end
 end

@@ -2,17 +2,17 @@
 				<h1>Anuncios</h1>
 
 	      <table class="table" id="listings_table">
-					<th>Data</th>
+					<th>Data da ativação</th>
 					<th>Data da expiração</th>
 					<th>E-mail</th>
-					<th>Quantidade de candidatos</th>
+					<th>Status</th>
 					<th class="last"></th>
 					<% @job.listings.each do |listing| %>
 						<tr class='<%= cycle("odd", "even") %>'>
-							<td><%= link_to listing.created_at.to_date, account_job_listing_path(@account, @job, listing) %></td>
-							<td><%= listing.created_at.to_date + listing.day_count.days %></td>
+							<td><%= link_to listing.actived_at.to_date, account_job_listing_path(@account, @job, listing) %></td>
+							<td><%= listing.actived_at.to_date + listing.day_count.days %></td>
 							<td><%= listing.email %></td>
-							<td><%= "0" %></td>
+							<td><%= t("activerecord.attributes.listing.active.#{listing.active.to_s}", :default => listing.active.to_s) %></td>
 							<td class="last">
 								<%= link_to "#{t("web-app-theme.show", :default => "Show")}", account_job_listing_path(@account, @job, listing) %> |
             		<%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_account_job_listing_path(@account, @job, listing) %> |

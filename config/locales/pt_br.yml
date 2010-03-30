@@ -48,6 +48,10 @@ pt_br:
       job: Vaga
       jobs: Vagas
     attributes:
+      listing:
+        active:
+          "true": Ativada
+          "false": Desativada
       job:
         title: Título
         salary_info: Benefícios
@@ -65,26 +69,6 @@ pt_br:
         contract_id: Contrato
         payment_date: Data do pagamento
         payment_price: Valor do pagamento
-      contract:
-        name: Nome
-        date_registry: Data do contrato
-        document: Número do contrato
-        account_date: Data do vencimento
-        account_quantity: Quantidade de parcelas
-        account_price: Valor da parcela
-      person:
-        name: Nome
-        address: "Endereço"
-        tipe: Tipo
-      bank:
-        code: Código
-        name: Nome
-        person_id: Instituição Bancária
-      bank_account:
-        bank_id: Banco
-        name: Nome
-        opening_balance: Saldo Inicial
-        opening_balance_date: Data do Saldo Inicial
     errors:
       template:
         body: "Os seguintes erros impediram esta operação:"
