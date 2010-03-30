@@ -4,6 +4,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Jobs-now</title>
 	<%= stylesheet_link_tag "web_app_theme", "web_app_theme_override", "themes/bec/style", :cache => true %>
+	<%= javascript_include_tag "jquery", "jquery-ui.min", "jquery.autocomplete", "application" %>
+	<%= stylesheet_link_tag "jquery-ui-custom", "jquery.autocomplete" %>
 </head>
 <body>
   <div id="container">
@@ -18,7 +20,6 @@
       </div>      
       <div id="main-navigation">
         <ul class="wat-cf">
-            <li class="<%= request.path =~ /jobs/ ? 'active' : '' %>"><a href="<%= jobs_path %>">Vagas</a></li>
             <li class="<%= request.path =~ /accounts/ ? 'active' : '' %>"><a href="<%= accounts_path %>">Conta</a></li>
 	</ul>
       </div>

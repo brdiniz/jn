@@ -1,9 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :jobs, :only => [:index]
   map.resources :accounts do |account|
     account.associate_professional "associate_professional", :controller => "accounts", :action => "associate_professional", :method => {:get, :post}
     account.disconnect_professional "disconnect_professional/:login_associate", :controller => "accounts", :action => "disconnect_professional", :method => "put"
-    account.resources :jobs
+		account.resources :emails
+    account.resources :jobs do |job|
+      job.resources :listings
+		end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

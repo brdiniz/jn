@@ -1,7 +1,8 @@
 class Job < ActiveRecord::Base
-  belongs_to :company, :primary_key => 'account_id', :class_name => 'Company'
+  belongs_to :company
+  has_many :listings, :dependent => :destroy
 
   def name
-    self.ref_info
+    "Referencia: #{self.id}"
   end
 end

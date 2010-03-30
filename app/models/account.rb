@@ -8,6 +8,15 @@ class Account < ActiveRecord::Base
   def <=>(other)
     self.name <=> other.name
   end
+
+	def list_emails
+		emails = []
+    emails << self.email_main
+    self.professionals.each do |professional|
+      emails << professional.email_main
+    end
+		emails
+	end
 	
 	def associate_professional
      self.professionals << Professional.find_by_login(self.login_associate)

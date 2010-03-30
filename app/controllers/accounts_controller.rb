@@ -1,4 +1,5 @@
 class AccountsController < InheritedResources::Base
+
   def associate_professional
     @account = Account.find(params[:account_id])
     

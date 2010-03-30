@@ -1,4 +1,5 @@
 class AccountsController < InheritedResources::Base
+
   def associate_professional
     @account = Account.find(params[:account_id])
     
@@ -11,10 +12,34 @@ class AccountsController < InheritedResources::Base
     end
   end
 
+	def index
+		@accounts = []
+		@account = Account.find(params[:account_id])
+		puts @account.id
+		@accounts << @account
+
+    @account.professionals do |professional|
+			@accounts << professional
+    end
+
+		super do |format|
+      @accounts.each do |account|
+        def account.to_xml(options = {})
+          builder = options[:builder]
+          builder.tag!('account') do
+            builder.id self.id
+            builder.name self.email_main
+          end
+        end
+      end
+      format.xml { render :xml => @accounts.to_xml }
+    end
+  end
+
   def disconnect_professional
     @account = Account.find(params[:account_id])
-		@account.update_attributes(params)
-	  if @account.disconnect_professional
+		@account.login_associate = params[:login_associate]
+		if @account.disconnect_professional
 			flash[:notice] = "Desassociação de Conta realizada com sucesso!"
 			redirect_to(account_path(@account))
 		else

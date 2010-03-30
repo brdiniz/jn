@@ -8,6 +8,14 @@ class Account < ActiveRecord::Base
   def <=>(other)
     self.name <=> other.name
   end
+
+	def list_emails
+		emails = []
+    self.professionals.each do |professional|
+      emails << professional.email_main
+    end
+		emails
+	end
 	
 	def associate_professional
      self.professionals << Professional.find_by_login(self.login_associate)
@@ -15,7 +23,7 @@ class Account < ActiveRecord::Base
 
   def disconnect_professional
     p = Professional.find_by_login(self.login_associate)
-		Professional.first(:conditions => {:professional_id => p.id, :company_id => self}).delete  
+		self.professionals.delete(p)
 	  return true
   end
 end

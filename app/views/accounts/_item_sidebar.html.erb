@@ -1,0 +1,3 @@
+<% if @job && !@job.new_record? %>
+   <li><%= link_to "Criar Anuncio", new_account_job_listing_path(@account, @job) %></li>
+<% end %>

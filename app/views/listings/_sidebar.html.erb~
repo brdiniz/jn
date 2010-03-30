@@ -1,0 +1,8 @@
+<div class="block">
+  <h3>Ações do Anuncio</h3>
+  <ul class="navigation">
+    <li><%= link_to "Voltar para a Conta", account_path(@account)%></li>
+    <li><%= link_to "Voltar para a Vaga", account_job_path(@account, @job)%></li>
+    <li><%= link_to "Criar Anuncio", new_account_job_listings_path(@account, @job)%></li>
+  </ul>
+</div>
