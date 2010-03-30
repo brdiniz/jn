@@ -4,6 +4,8 @@ class Account < ActiveRecord::Base
   attr_accessor :kind
   attr_accessor :login_associate
   attr_accessor :email_main_associate
+  
+  validates_uniqueness_of :email_main, :login
 
   def <=>(other)
     self.name <=> other.name

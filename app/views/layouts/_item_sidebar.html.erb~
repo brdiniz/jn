@@ -1,9 +1,0 @@
-<div class="block">
-  <h3>Ações</h3>
-  <ul class="navigation">
-      <li><%= link_to "Voltar " + t("activerecord.models.#{model}"), send("#{model}_path", eval("@#{model}"))  %></li>
-      <li><%= link_to "Criar " + t("activerecord.models.#{model_item}"), send("new_#{model}_#{model_item}_path", eval("@#{model}"))  %></li>
-    <%= render(:partial => model.pluralize + '/item_sidebar') -%>
-  </ul>
-</div>
-

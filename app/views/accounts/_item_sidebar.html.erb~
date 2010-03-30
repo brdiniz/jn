@@ -1,3 +1,0 @@
-<% if @job && !@job.new_record? %>
-   <li><%= link_to "Anunciar Vaga", new_account_job_listing_path(@account, @job) %></li>
-<% end %>
