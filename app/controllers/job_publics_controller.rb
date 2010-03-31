@@ -1,0 +1,2 @@
+class JobPublicsController < ApplicationController
+end

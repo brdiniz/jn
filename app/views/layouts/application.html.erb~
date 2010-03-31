@@ -20,7 +20,7 @@
       </div>      
       <div id="main-navigation">
         <ul class="wat-cf">
-            <li class="<%= request.path =~ /jobs/ ? 'active' : '' %>"><a href="<%= jobs_path %>">Vagas</a></li>
+            <li class="<%= request.path =~ /jobs/ ? 'active' : '' %>"><a href="<%= job_publics_path %>">Vagas</a></li>
             <li class="<%= request.path =~ /accounts/ ? 'active' : '' %>"><a href="<%= accounts_path %>">Conta</a></li>
 	</ul>
       </div>
