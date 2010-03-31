@@ -26,6 +26,7 @@ class Account < ActiveRecord::Base
 
   def disconnect_professional
     p = Professional.find_by_login(self.login_associate)
+    return false unless p
 		self.professionals.delete(p)
 	  return true
   end

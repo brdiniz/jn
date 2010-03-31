@@ -4,6 +4,7 @@ describe Listing do
   
   it "should create a new instance given valid attributes" do
     l = Factory(:listing)
+    l.expirate_date.should == l.actived_at.to_date + l.day_count.days 
   end
   
   it "should verify listing active" do

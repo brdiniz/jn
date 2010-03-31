@@ -6,9 +6,6 @@ class ListingsController < InheritedResources::Base
     destroy! do |format|
       format.html { redirect_to account_job_path(@account, @job) }
     end
-  rescue Exception => e
-    flash[:error] = e.message
-    redirect_to(account_job_listing_path)
   end
   
   def enable_listing

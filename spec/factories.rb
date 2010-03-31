@@ -1,6 +1,6 @@
 Factory.define :company do |f|
 	f.sequence(:name) { |n| "company_#{n}" }
-  f.kind "Empresa"
+  f.kind "Company"
 	f.sequence(:email_main) { |n| "company_#{n}@jn.com" }
 	f.sequence(:login) { |n| "company_#{n}" }
 	f.password "123"
@@ -26,4 +26,5 @@ Factory.define :listing do |l|
   l.location "São Paulo"
   l.email "professional@jn.com"
   l.day_count "10"
+  l.association :job, :factory => :job
 end
