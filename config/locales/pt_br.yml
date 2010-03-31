@@ -47,6 +47,7 @@ pt_br:
       accounts: Contas
       job: Vaga
       jobs: Vagas
+      job_listings: Vagas anunciadas
     attributes:
       listing:
         region: Região

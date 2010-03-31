@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :jobs, :controller => "job_listings"
+  map.job_listing_public '/jobs/listings/public', :controller => "job_listings", :action => :updated_listing
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -6,8 +6,10 @@ class JobListingsController < ApplicationController
   end
   
   def updated_listing
-    generate_job_listing
-    flash[:notice] = "Publicação dos anuncios para vagas realizada com sucesso!"
-    render :action => "index"
+    if request.put?
+      generate_job_listing
+      flash[:notice] = "Publicação dos anuncios para vagas realizada com sucesso!"
+      render :action => "index"
+    end
   end
 end

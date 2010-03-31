@@ -1,0 +1,18 @@
+<table class="table">
+  <tr>             
+    <th class="first">Referencia</th>
+		<th>Data</th>
+		<th>Vaga</th>
+		<th>Empresa</th>
+    <th class="last">&nbsp;</th>
+  </tr>
+  <% @job_listings.each do |listing| -%>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td><%= listing.id %></td>
+		<td><%= listing.actived_at %></td>
+		<td><%= link_to listing.job.title, "#" %></td>
+		<td><%= listing.job.company.name %></td>
+		<td class="last"></td>
+  </tr>          
+  <% end -%>
+</table>
