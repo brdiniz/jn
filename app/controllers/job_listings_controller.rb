@@ -9,7 +9,7 @@ class JobListingsController < ApplicationController
     if request.put?
       generate_job_listing
       flash[:notice] = "Publicação dos anuncios para vagas realizada com sucesso!"
-      render :action => "index"
+      redirect_to jobs_path
     end
   end
 end
