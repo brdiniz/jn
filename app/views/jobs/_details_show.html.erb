@@ -4,11 +4,12 @@
         </p>
 
         <p>
+          <b><%= t("activerecord.attributes.job.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</b>
+          <br /><br /><%= @job.description.gsub("\r\n", "<br />") %>
+        </p>
+
+        <p>
           <b><%= t("activerecord.attributes.job.salary_info", :default => t("activerecord.labels.salary_info", :default => "Salary info")) %>:</b>
           <%= @job.salary_info %>
         </p>
 
-        <p>
-          <b><%= t("activerecord.attributes.job.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</b>
-          <br /><br /><%= @job.description.gsub("\r\n", "<br />") %>
-        </p>

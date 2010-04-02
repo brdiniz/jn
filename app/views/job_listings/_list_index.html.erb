@@ -1,18 +1,17 @@
 <table class="table">
-  <tr>             
-    <th class="first">Referencia</th>
-		<th>Data</th>
-		<th>Vaga</th>
-		<th>Empresa</th>
+  <tr>
+    <th>Vaga</th>
+    <th>Candidatos</th>
     <th class="last">&nbsp;</th>
   </tr>
   <% @job_listings.each do |listing| -%>
   <tr class="<%= cycle("odd", "even") %>">
-    <td><%= listing.id %></td>
-		<td><%= listing.actived_at %></td>
-		<td><%= link_to listing.job.title, "#" %></td>
-		<td><%= listing.job.company.name %></td>
-		<td class="last"></td>
-  </tr>          
+    <td><span style="font-size:120%;font-weight:bold;"><%= listing.job.company.name %></span> está procurando um <span style="color:#D70000;font-size:125%;font-weight:bold;line-height:1.5;text-decoration:none;"><%= listing.job.title %></span> em <b><%= listing.region %>, <%= listing.location %></b></td>
+    <td>0</td>
+    <td class="last">
+      <%= link_to "#{t("web-app-theme.show", :default => "Show")}", job_path(listing) %>
+    </td>
+  </tr>
   <% end -%>
 </table>
+
