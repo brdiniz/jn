@@ -1,13 +1,19 @@
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <th>Vaga</th>
-                  </tr>
-                  <% @listings.each do |listing| -%>
-                  <tr class="<%= cycle("odd", "even") %>">
-                    <td><span style="font-size: 120%; font-weight: bold;"><%= listing.job.company.name %></span> procura profissional <span style="color: rgb(215, 0, 0); font-size: 125%; font-weight: bold; line-height: 1.5; text-decoration: none;"><%= link_to listing.job.title, job_details_path(listing.id, listing.job.title.gsub(" ", "-")) %></span> em <b><%= listing.region %>, <%= listing.location %></b></td>
-                  </tr>
-                  <% end %>
-                </tbody>
-              </table>
-
+<table class="table">
+  <tbody>
+    <tr>
+      <th>Vaga</th>
+    </tr>
+    <% @listings.each do |listing| -%>
+    <tr class="<%= cycle("odd", "even") %>">
+      <td>
+        <div align="center"><b><%= listing.region %>, <%= listing.location %> - <%= listing.created_at.strftime("%d/%m/%Y") %></b></div><br />
+        <span><%= listing.job.title %></span>
+        <br /><br /><%= listing.job.description.gsub("\r\n", "<br />") %><br /><br /><br/>
+        <b>Salário:</b> <%= listing.job.salary_info %> <br/>
+        <b>Empresa:</b> <%= listing.job.company.name %> <br/><br/>
+        <%= link_to "Clique aqui para candidatar", job_details_path(listing.id, listing.job.title.gsub(" ", "-")) %><br/><br/>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

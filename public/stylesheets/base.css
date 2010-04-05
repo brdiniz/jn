@@ -9,12 +9,25 @@ body {
     border-collapse:collapse;
     margin-bottom:15px;
     width:100%;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .table td {
     border-bottom:1px
     solid #F0F0EE;
+}
+
+.table td span {
+	font-size: 120%; 
+	font-weight: bold;
+}
+
+.table td a {
+	color: rgb(215, 0, 0);
+	font-size: 125%; 
+	font-weight: bold; 
+	line-height: 1.5; 
+	text-decoration: none;
 }
 
 .table tr.even {
@@ -165,11 +178,11 @@ background:#EBEBEB none repeat scroll 0 0;
 
 #main-info {
     min-width:832px;
-    width:69.33em;
+    width:81.33em;
 }
 
 .main-info-details {
-    min-width:582px;
+    min-width:746px;
     width:24.25em;
 }
 
@@ -229,8 +242,8 @@ background:#EBEBEB none repeat scroll 0 0;
 
 #main-jobs-now {
    float:right;
-   min-width:832px;
-   width:69.33em;
+   min-width:964px;
+   width:82.33em;
 }
 
 #main-menu-right {
