@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" href="stylesheets/base.css" type="text/css" media="screen" />
+</hed>
+<body>
+  <div id="container">
+    <div id="header">
+      <div id="header-container">
+        <div id="header-marca">
+          <a href="http://www.jobs-now.com.br">
+            <strong>Job-now.com.br</strong>
+          </a>
+        </div>
+        <div id="header-menu-find">
+          <form>
+            <fieldset>
+              <input id="query" class="textbox" type="text" value="" maxlenght="150" name="query">
+              <input class="button" type="submit" value="buscar" name="button">
+            </fieldset>
+          </form>
+          <ul>
+            <li class="menu-first">
+              <a href="">listar vagas</a>
+            </li>
+            <li class="menu-second">
+              <a href="">anunciar vagas</a>
+            </li>
+          </ul>
+        </div>
+        <div id="header-login">
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div id="main-menu-left">
+        teste
+      </div>
+      <div id="main-jobs-now">
+        <div id="main-info">
+          <div id="main-info-highlights">
+            <div class="main-info-details">
+              <%= yield %>
+            </div>
+          </div>
+          <div id="main-side">
+            <!--v id="main-menu-right"-->
+              <div class="box-cash">
+                <div class="box-cash-top">
+                  <div class="box-cash-title-bar">
+                    <div class="box-cash-title">
+                      <div class="bc-title bc-title_h5">titulo</div>
+                    </div>
+                    <div style="float:right;">
+                      <small style="font-size:13px;">
+                        <a style="color:#3B5998;cursor:pointer;outline-style:none;text-decoration:none;">link</a>
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              <!--/div-->
+              <hr style="display:none;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+    </div>
+  </div>
+</body>
+</html>
+

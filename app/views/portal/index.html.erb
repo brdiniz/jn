@@ -1,0 +1,13 @@
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th>Vaga</th>
+                  </tr>
+                  <% @listings.each do |listing| -%>
+                  <tr class="<%= cycle("odd", "even") %>">
+                    <td><span style="font-size: 120%; font-weight: bold;"><%= listing.job.company.name %></span> procura profissional <span style="color: rgb(215, 0, 0); font-size: 125%; font-weight: bold; line-height: 1.5; text-decoration: none;"><%= link_to listing.job.title, job_details_path(listing.id, listing.job.title.gsub(" ", "-")) %></span> em <b><%= listing.region %>, <%= listing.location %></b></td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+

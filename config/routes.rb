@@ -8,8 +8,10 @@ ActionController::Routing::Routes.draw do |map|
         listing.enable "enable", :controller => "listings", :action => "enable_listing", :method => "put"
         listing.disable "disable", :controller => "listings", :action => "disable_listing", :method => "put"
       end
-		end
+    end
   end
+
+  map.job_details '/portal/:listing_id/:job_title', :controller => :portal, :action => :show
 
   map.resources :jobs, :controller => "job_listings"
   map.job_listing_public '/jobs/listings/public', :controller => "job_listings", :action => :updated_listing
@@ -32,7 +34,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
+
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
@@ -56,3 +58,4 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
+
