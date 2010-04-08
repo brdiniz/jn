@@ -1,5 +1,5 @@
 <div class="block">
-  <h3>Ações</h3>
+  <h3>Ações para <%= t("activerecord.models.#{model}") %></h3>
   <ul class="navigation">
     <% if menu_visible %>
       <li><%= link_to "Listar " + t("activerecord.models.#{model.pluralize}"), send("#{model.pluralize}_path")  %></li>
