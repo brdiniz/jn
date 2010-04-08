@@ -47,6 +47,8 @@ pt_br:
       accounts: Contas
       job: Vaga
       jobs: Vagas
+      listing: Anuncio
+      listings: Anuncios
       job_listings: Vagas anunciadas
     attributes:
       listing:

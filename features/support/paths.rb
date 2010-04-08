@@ -12,7 +12,24 @@ module NavigationHelpers
       '/'
     
     when /the list of (.+)/
-      "/#{$1.pluralize}/"
+        class_name = $1.pluralize.downcase
+        eval("#{class_name}_path")
+        
+    when /the "(.+)" (.+) (.+)ing screen/
+      model = $2
+      name = $1
+      id = eval(model.camelize).find_by_name(name).id
+      return "/#{model.underscore.pluralize}/#{id}" if $3 == "show"
+      "/#{model.underscore.pluralize}/#{$3}/#{id}"
+      
+    when /the show "(.+)" (.+) in the "(.+)" (.+)/
+      model_name = $3
+      model_clazz = $4
+      model = eval(model_clazz.camelize).find_by_name(model_name)
+      model_item_name = $1
+      model_item_clazz = $2
+      model_item = eval(model_item_clazz.camelize).find_by_title(model_item_name)
+      "#{model_clazz.underscore.pluralize}/#{model.id}/#{model_item_clazz.underscore.pluralize}/#{model_item.id}"
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

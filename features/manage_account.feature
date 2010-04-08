@@ -17,5 +17,7 @@ Feature: Manage account
 	  Then I should see "Criação de Conta realizada com sucesso"
 		And I should see "account-now.com.br"
 		And I should see "account-now"
+		And I should see "Profissionais"
+		And I should see "Vagas"
 
 
