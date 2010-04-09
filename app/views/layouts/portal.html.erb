@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link rel="stylesheet" href="stylesheets/base.css" type="text/css" media="screen" />
+	<%= stylesheet_link_tag "base" %>
 </hed>
 <body>
   <div id="container">
@@ -21,7 +22,7 @@
           </form>
           <ul>
             <li class="menu-first">
-              <a href="">listar vagas</a>
+              <%= link_to "listar vagas", root_path %>
             </li>
             <li class="menu-second">
               <a href="">anunciar vagas</a>
