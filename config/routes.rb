@@ -10,6 +10,8 @@ ActionController::Routing::Routes.draw do |map|
       end
     end
   end
+  
+  map.root :controller => :accounts 
 
   map.job_details '/portal/:listing_id/:job_title', :controller => :portal, :action => :show
 

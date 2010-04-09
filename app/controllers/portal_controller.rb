@@ -1,6 +1,6 @@
 class PortalController < ApplicationController
   def index
-    @listings = Listing.job_listings
+    @listings = Listing.published
   end
 end
 
