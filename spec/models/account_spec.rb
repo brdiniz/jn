@@ -23,7 +23,13 @@ describe Account do
   end
   
   it "should associate and list all emails in the company and professionals" do
-    c = Factory(:company, :email_main => "email@company.com")
+    ENCRYPT = Digest::SHA256
+    password = "abc123"
+    
+    c = Factory(:company, :email_main => "email@company.com", :password => password)
+    
+    c.encrypted_password.should_not == password
+    
     p = Factory(:professional, :email_main => "email@professional.com")
     c.login_associate = p.login
     c.associate_professional
