@@ -13,7 +13,8 @@ class AuthenticateController < InheritedResources::Base
   end
   
   def logout
-    Session.find(current_session).destroy if current_session
+    @session = Session.find_by_id(current_session)
+    @session.destroy if @session
     session[:id] = nil
     redirect_to(new_session_path)
   end
