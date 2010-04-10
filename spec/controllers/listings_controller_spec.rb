@@ -1,6 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe ListingsController do
+  it_should_behave_like "authenticated controller"
   
   it "should redirect to job when enable account" do
     l = Factory(:listing)

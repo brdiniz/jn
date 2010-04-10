@@ -1,4 +1,4 @@
-class ListingsController < InheritedResources::Base
+class ListingsController < AuthenticateController
   belongs_to :account
   belongs_to :job
 

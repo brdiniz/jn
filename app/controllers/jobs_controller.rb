@@ -1,4 +1,4 @@
-class JobsController < InheritedResources::Base
+class JobsController < AuthenticateController
   belongs_to :account
   
   def destroy
