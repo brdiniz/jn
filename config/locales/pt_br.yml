@@ -50,6 +50,7 @@ pt_br:
       listing: Anuncio
       listings: Anuncios
       job_listings: Vagas anunciadas
+      user: Usuário
     attributes:
       listing:
         region: Região

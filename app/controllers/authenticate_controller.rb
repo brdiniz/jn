@@ -10,6 +10,7 @@ class AuthenticateController < InheritedResources::Base
   def maintain_session_and_user
     @session = Session.find_by_id(current_session)
     logout unless @session
+    @application_account = @session.account
   end
   
   def logout

@@ -4,7 +4,8 @@ class SessionsController < InheritedResources::Base
     @session = Session.new(params[:session])
     if @session.save
       session[:id] = @session.id
-      redirect_to(accounts_path)
+      redirect_to(accounts_path) if @session.account.admin?
+      redirect_to(users_path) if !@session.account.admin?
     else
       current_session = nil
       render(:action => 'new')

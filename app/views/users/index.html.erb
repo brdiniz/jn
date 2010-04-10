@@ -1,0 +1,30 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to t("activerecord.models.user") + " #{@application_account.name}", "#" %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="inner">
+
+      <%= render(:partial => "accounts/details_show") %>
+
+      <p />
+      <h1>Empresas</h1>
+	    <table class="table" id="professionals_table">
+				<th class="first">Nome</th>
+				<th class="last"></th>
+				<% @account.companies.each do |company| %>
+					<tr class='<%= cycle("odd", "even") %>'>
+						<td><%= company.name %></td>
+						<td class="last">
+							<%= link_to "#{t("web-app-theme.show", :default => "Show")}", account_path(company) %>
+						</td>
+					</tr>
+         <% end %>
+	    </table>
+
+    </div>
+  </div>
+</div>
+

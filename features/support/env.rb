@@ -58,12 +58,15 @@ Before do
 end
 
 class AuthenticateController
+  before_filter :maintain_session_and_user
   
   def current_session
     return Session.first.id
   end
-  
-  def current_user
-    return Session.find(current_session).account
+
+  private
+  def maintain_session_and_user
+    @session = Session.first
+    @application_account = Account.first
   end
 end
