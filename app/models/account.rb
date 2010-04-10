@@ -23,8 +23,7 @@ class Account < ActiveRecord::Base
   def password=(password)
     @password = password
     unless password_is_not_being_updated?
-      salt = [Array.new(9){rand(256).chr}.join].pack('m').chomp
-      self.encrypted_password = ENCRYPT.hexdigest(password + salt)
+      self.encrypted_password = ENCRYPT.hexdigest(password)
     end
   end
   
