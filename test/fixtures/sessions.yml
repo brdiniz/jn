@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  account: 
+  ip_adress: MyString
+  path: MyString
+
+two:
+  account: 
+  ip_adress: MyString
+  path: MyString
