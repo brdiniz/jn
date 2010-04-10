@@ -1,9 +1,14 @@
 class AuthenticateController < InheritedResources::Base
-
+  load_and_authorize_resource
+  
   before_filter :maintain_session_and_user
 
   def current_session
     session[:id]
+  end
+  
+  def current_user
+    session[:current_user]
   end
   
   private

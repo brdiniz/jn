@@ -2,16 +2,19 @@ Factory.define :company do |f|
 	f.sequence(:name) { |n| "company_#{n}" }
   f.kind "Company"
 	f.sequence(:email_main) { |n| "company_#{n}@jn.com" }
-	f.sequence(:login) { |n| "company_#{n}" }
-	f.password "123"
+  f.association :user, :factory => :user
+end
+
+Factory.define :user do |u|
+  u.sequence(:login) { |n| "login.#{n}" }
+  u.password "ABC123"
 end
 
 Factory.define :professional do |f|
 	f.sequence(:name) { |n| "professional_#{n}" }
   f.kind "Profissional"
 	f.sequence(:email_main) { |n| "professional_#{n}@jn.com" }
-	f.sequence(:login) { |n| "professional_#{n}" }
-	f.password "123"
+  f.association :user, :factory => :user
 end
 
 Factory.define :job do |j|

@@ -1,20 +1,19 @@
-require 'digest/sha2'
-
 class Account < ActiveRecord::Base
   KINDS = {"Empresa" => "Company", "Profissional" => "Professional" }
 
-  ENCRYPT = Digest::SHA256
+  has_one :user, :as => :person
+  accepts_nested_attributes_for :user
   
-  attr_reader :password
+  validates_presence_of :user
+  validates_associated :user
+  validates_uniqueness_of :email_main
   
-  attr_accessor :password_confirmation   
+  after_destroy :delete_user
+    
   attr_accessor :kind
   attr_accessor :login_associate
   attr_accessor :email_main_associate
   
-  validates_uniqueness_of :email_main, :login
-
-  after_save :flush_passwords
   
   def admin?
     return true if login == "brdiniz"
@@ -22,13 +21,6 @@ class Account < ActiveRecord::Base
 
   def <=>(other)
     self.name <=> other.name
-  end
-  
-  def password=(password)
-    @password = password
-    unless password_is_not_being_updated?
-      self.encrypted_password = ENCRYPT.hexdigest(password)
-    end
   end
   
 	def list_emails
@@ -44,25 +36,14 @@ class Account < ActiveRecord::Base
      self.professionals << Professional.find_by_login(self.login_associate)
   end
 
-  def password_is_not_being_updated?
-   self.id and self.password.blank?
-  end
-
   def disconnect_professional
     p = Professional.find_by_login(self.login_associate)
     return false unless p
 		self.professionals.delete(p)
 	  return true
   end
-  
-  def self.find_by_login_and_password(login, password)
-    account = self.find_by_login(login)
-    if account and account.encrypted_password == ENCRYPT.hexdigest(password)
-      return account
-    end
-  end
 
-  def flush_passwords
-    @password = @password_confirmation = nil
+  def delete_user
+    user.destroy if user
   end
 end

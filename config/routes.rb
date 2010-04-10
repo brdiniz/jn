@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users, :only => [:index] 
   
-  map.resources :sessions, :only => [:index, :create] 
+  map.resources :sessions
   
   map.root :controller => :portal 
   
