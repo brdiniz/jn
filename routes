@@ -64,4 +64,73 @@ Finished in 0.665565 seconds
 
 [32m21 examples, 0 failures[0m
 [38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m [34P(reverse-i-search)`':[Co': rake spec:rcovp': open coverage/index.html [4he[4l[C[C[C[4hn[4l[C[C[C[4h[38m[01;34mbrdiniz:~/Documen[4lts/projects/pessoal/jobs-now [31m(master)[29m$[00m[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m 
-[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m 
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m git statyus[K[K[Kus
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/controllers/accounts_controller.rb
+#	modified:   app/controllers/portal_controller.rb
+#	modified:   app/controllers/sessions_controller.rb
+#	modified:   app/models/account.rb
+#	modified:   app/models/session.rb
+#	modified:   app/views/layouts/application.html.erb
+#	modified:   app/views/sessions/new.html.erb
+#	modified:   config/locales/pt_br.yml
+#	modified:   config/routes.rb
+#	modified:   features/support/env.rb
+#	modified:   spec/controllers/accounts_controller_spec.rb
+#	modified:   spec/spec_helper.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/controllers/authenticate_controller.rb
+#	routes
+#	spec/fixtures/
+#	spec/models/session_spec.rb
+no changes added to commit (use "git add" and/or "git commit -a")
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m git add .
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m git commit a[K-am "Autenticacao simples de usu arios"
+[master da976d1] Autenticacao simples de usuarios
+ 17 files changed, 207 insertions(+), 14 deletions(-)
+ create mode 100644 app/controllers/authenticate_controller.rb
+ create mode 100644 routes
+ create mode 100644 spec/fixtures/accounts.yml
+ create mode 100644 spec/fixtures/sessions.yml
+ create mode 100644 spec/models/session_spec.rb
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m git push
+Counting objects: 57, done.
+Delta compression using up to 2 threads.
+Compressing objects:   3% (1/31)   Compressing objects:   6% (2/31)   Compressing objects:   9% (3/31)   Compressing objects:  12% (4/31)   Compressing objects:  16% (5/31)   Compressing objects:  19% (6/31)   Compressing objects:  22% (7/31)   Compressing objects:  25% (8/31)   Compressing objects:  29% (9/31)   Compressing objects:  32% (10/31)   Compressing objects:  35% (11/31)   Compressing objects:  38% (12/31)   Compressing objects:  41% (13/31)   Compressing objects:  45% (14/31)   Compressing objects:  48% (15/31)   Compressing objects:  51% (16/31)   Compressing objects:  54% (17/31)   Compressing objects:  58% (18/31)   Compressing objects:  61% (19/31)   Compressing objects:  64% (20/31)   Compressing objects:  67% (21/31)   Compressing objects:  70% (22/31)   Compressing objects:  74% (23/31)   Compressing objects:  77% (24/31)   Compressing objects:  80% (25/31)   Compressing objects:  83% (26/31)   Compressing objects:  87% (27/31)   Compressing objects:  90% (28/31)   Compressing objects:  93% (29/31)   Compressing objects:  96% (30/31)   Compressing objects: 100% (31/31)   Compressing objects: 100% (31/31), done.
+Writing objects:   3% (1/33)   Writing objects:   6% (2/33)   Writing objects:   9% (3/33)   Writing objects:  12% (4/33)   Writing objects:  15% (5/33)   Writing objects:  18% (6/33)   Writing objects:  21% (7/33)   Writing objects:  24% (8/33)   Writing objects:  27% (9/33)   Writing objects:  30% (10/33)   Writing objects:  33% (11/33)   Writing objects:  36% (12/33)   Writing objects:  39% (13/33)   Writing objects:  42% (14/33)   Writing objects:  45% (15/33)   Writing objects:  48% (16/33)   Writing objects:  51% (17/33)   Writing objects:  54% (18/33)   Writing objects:  57% (19/33)   Writing objects:  60% (20/33)   Writing objects:  63% (21/33)   Writing objects:  66% (22/33)   Writing objects:  69% (23/33)   Writing objects:  72% (24/33)   Writing objects:  75% (25/33)   Writing objects:  78% (26/33)   Writing objects:  81% (27/33)   Writing objects:  84% (28/33)   Writing objects:  87% (29/33)   Writing objects:  90% (30/33)   Writing objects:  93% (31/33)   Writing objects:  96% (32/33)   Writing objects: 100% (33/33)   Writing objects: 100% (33/33), 5.84 KiB, done.
+Total 33 (delta 18), reused 0 (delta 0)
+To git@github.com:Brdiniz/jn.git
+   b4a2fdb..da976d1  master -> master
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m rake db:reset
+(in /Users/brdiniz/Documents/projects/pessoal/jobs-now)
+-- create_table("accounts", {:force=>true})
+   -> 0.1176s
+-- create_table("companies_professionals", {:force=>true, :id=>false})
+   -> 0.2066s
+-- create_table("jobs", {:force=>true})
+   -> 0.1001s
+-- create_table("listings", {:force=>true})
+   -> 0.1006s
+-- create_table("sessions", {:force=>true})
+   -> 0.1004s
+-- initialize_schema_migrations_table()
+   -> 0.2703s
+-- assume_migrated_upto_version(20100410013107)
+   -> 0.0096s
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m git status
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   routes
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m git commit -am 
