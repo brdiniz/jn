@@ -58,9 +58,9 @@ Before do
 end
 
 class AuthenticateController
-
+  
   def current_session
-    return Session.first
+    return Session.first.id
   end
   
   def current_user
