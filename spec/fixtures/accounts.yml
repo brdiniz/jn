@@ -1,0 +1,5 @@
+account1:
+  name: "Job"
+  email_main: "jobs@job-now.com.br"
+  login: "job"
+  encrypted_password: "2612d391c1eb9a05beb967f1f2adaf215a544bd5e2d88d2a13c..."

@@ -5,11 +5,13 @@
         <h2>Login</h2>
         <div class="content login">
           <div class="flash">
+	
 		        <% flash.each do |type, message| -%>
 		          <div class="message <%= type %>">
 		            <p><%= message %></p>
 		          </div>
 		        <% end -%>
+		
           </div>
 		      <% form_for :session, :url => sessions_path, :html => { :class => "form login" } do |f| -%>
 
@@ -32,10 +34,11 @@
             <div class="group navform wat-cf">
               <div class="right">
                 <button class="button" type="submit">
-									<%= image_tag("images/icons/key.png", :alt => "Enviar", :default => "Enviar") %>
+									<%= image_tag("web-app-theme/key.png", :alt => "Enviar", :default => "Enviar") %> Enviar
                 </button>
               </div>
             </div>
+
           <% end %>
         </div>
       </div>

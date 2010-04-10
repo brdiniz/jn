@@ -1,0 +1,67 @@
+Script started on Sat Apr 10 04:13:04 2010
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m mate .cd ../../studies/simple_and_restful/git pull[Kcd Documents/projects/locaweb/cegonha/[13PAUTOFEATURE=true autospec[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd Documents/projects/pessoal/jobs-now/[25Pscript/server AUTOFEATURE=true autospeccd Documents/projects/pessoal/jobs-now/[14Popen coverage/index.html [11Prake spec:rcov[4Pgit status[2Ppushcommit -am "Tela de login e controle de  sessao"[A[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m [C[C[C[Cadd .[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatusscript/generate theme --type=sign[18Prake db:migratescript/generate model session account:belonggs_to ip_adress:string path:string[A[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cperson:belongs[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m git push[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -am "Teste de senhas"status[K[4Pmate .cd Documents/projects/pessoal/jobs-now/ifconfig[Kcd Documents/projects/pessoal/jobs-now/[17Pscript/server  -p 9000[Kcd ../../studies/simple_and_restful/[21Pscript/console cd Documents/projects/pessoal/jobs-now/[25Pscript/server [4hc[4lonsole[C[9Pmate .[K[K[K[K[K[Krake routes
+(in /Users/brdiniz/Documents/projects/pessoal/jobs-now)
+ account_associate_professional        /accounts/:account_id/associate_professional                    {:action=>"associate_professional", :controller=>"accounts", :method=>{:get=>:post}}
+account_disconnect_professional        /accounts/:account_id/disconnect_professional/:login_associate  {:action=>"disconnect_professional", :controller=>"accounts", :method=>"put"}
+                 account_emails GET    /accounts/:account_id/emails(.:format)                          {:controller=>"emails", :action=>"index"}
+                                POST   /accounts/:account_id/emails(.:format)                          {:controller=>"emails", :action=>"create"}
+              new_account_email GET    /accounts/:account_id/emails/new(.:format)                      {:controller=>"emails", :action=>"new"}
+             edit_account_email GET    /accounts/:account_id/emails/:id/edit(.:format)                 {:controller=>"emails", :action=>"edit"}
+                  account_email GET    /accounts/:account_id/emails/:id(.:format)                      {:controller=>"emails", :action=>"show"}
+                                PUT    /accounts/:account_id/emails/:id(.:format)                      {:controller=>"emails", :action=>"update"}
+                                DELETE /accounts/:account_id/emails/:id(.:format)                      {:controller=>"emails", :action=>"destroy"}
+     account_job_listing_enable        /accounts/:account_id/jobs/:job_id/listings/:listing_id/enable  {:action=>"enable_listing", :controller=>"listings", :method=>"put"}
+    account_job_listing_disable        /accounts/:account_id/jobs/:job_id/listings/:listing_id/disable {:action=>"disable_listing", :controller=>"listings", :method=>"put"}
+           account_job_listings GET    /accounts/:account_id/jobs/:job_id/listings(.:format)           {:controller=>"listings", :action=>"index"}
+                                POST   /accounts/:account_id/jobs/:job_id/listings(.:format)           {:controller=>"listings", :action=>"create"}
+        new_account_job_listing GET    /accounts/:account_id/jobs/:job_id/listings/new(.:format)       {:controller=>"listings", :action=>"new"}
+       edit_account_job_listing GET    /accounts/:account_id/jobs/:job_id/listings/:id/edit(.:format)  {:controller=>"listings", :action=>"edit"}
+            account_job_listing GET    /accounts/:account_id/jobs/:job_id/listings/:id(.:format)       {:controller=>"listings", :action=>"show"}
+                                PUT    /accounts/:account_id/jobs/:job_id/listings/:id(.:format)       {:controller=>"listings", :action=>"update"}
+                                DELETE /accounts/:account_id/jobs/:job_id/listings/:id(.:format)       {:controller=>"listings", :action=>"destroy"}
+                   account_jobs GET    /accounts/:account_id/jobs(.:format)                            {:controller=>"jobs", :action=>"index"}
+                                POST   /accounts/:account_id/jobs(.:format)                            {:controller=>"jobs", :action=>"create"}
+                new_account_job GET    /accounts/:account_id/jobs/new(.:format)                        {:controller=>"jobs", :action=>"new"}
+               edit_account_job GET    /accounts/:account_id/jobs/:id/edit(.:format)                   {:controller=>"jobs", :action=>"edit"}
+                    account_job GET    /accounts/:account_id/jobs/:id(.:format)                        {:controller=>"jobs", :action=>"show"}
+                                PUT    /accounts/:account_id/jobs/:id(.:format)                        {:controller=>"jobs", :action=>"update"}
+                                DELETE /accounts/:account_id/jobs/:id(.:format)                        {:controller=>"jobs", :action=>"destroy"}
+                       accounts GET    /accounts(.:format)                                             {:controller=>"accounts", :action=>"index"}
+                                POST   /accounts(.:format)                                             {:controller=>"accounts", :action=>"create"}
+                    new_account GET    /accounts/new(.:format)                                         {:controller=>"accounts", :action=>"new"}
+                   edit_account GET    /accounts/:id/edit(.:format)                                    {:controller=>"accounts", :action=>"edit"}
+                        account GET    /accounts/:id(.:format)                                         {:controller=>"accounts", :action=>"show"}
+                                PUT    /accounts/:id(.:format)                                         {:controller=>"accounts", :action=>"update"}
+                                DELETE /accounts/:id(.:format)                                         {:controller=>"accounts", :action=>"destroy"}
+                       sessions GET    /sessions(.:format)                                             {:controller=>"sessions", :action=>"index"}
+                                POST   /sessions(.:format)                                             {:controller=>"sessions", :action=>"create"}
+                    new_session GET    /sessions/new(.:format)                                         {:controller=>"sessions", :action=>"new"}
+                   edit_session GET    /sessions/:id/edit(.:format)                                    {:controller=>"sessions", :action=>"edit"}
+                        session GET    /sessions/:id(.:format)                                         {:controller=>"sessions", :action=>"show"}
+                                PUT    /sessions/:id(.:format)                                         {:controller=>"sessions", :action=>"update"}
+                                DELETE /sessions/:id(.:format)                                         {:controller=>"sessions", :action=>"destroy"}
+                           root        /                                                               {:action=>"index", :controller=>"portal"}
+                 session_logout        /session/logout                                                 {:controller=>"sessions", :action=>"logout"}
+                    job_details        /portal/:listing_id/:job_title                                  {:controller=>"portal", :action=>"show"}
+                                       /:controller/:action/:id                                        
+                                       /:controller/:action/:id(.:format)                              
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m rake routes | grep logout
+                 session_logout        /session/logout                                                 {:controller=>"sessions", :action=>"logout"}
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m rake routes | grep logout
+                 session_logout        /session/logout                                                 {:controller=>"sessions", :action=>"logout", :method=>"destroy"}
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m cd ../../locaweb/cegonha/
+[38m[01;34mbrdiniz:~/Documents/projects/locaweb/cegonha [31m(master)[29m$[00m mate .
+[38m[01;34mbrdiniz:~/Documents/projects/locaweb/cegonha [31m(master)[29m$[00m cd ../../[K/pessoal/lo[K[Kjobs-now/
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m [34P(reverse-i-search)`':[Cr': rake routes | grep logout[4ho[4l[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[1P[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[4hr[4l[C[C[C[C[C[C[C[Cc': rake spec:rcov[4ho[4l[C[C[C[C[C[C[C[C[C[C[C[C[C[4hv[4l[C[C[C[C[C[C[C[C[C[C[C[C[C[4h[38m[01;34mbrdiniz:~/Documen[4lts/projects/pessoal/jobs-now [31m(master)[29m$[00m[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m [C[C[C[C[C[C[C[C[C[C
+(in /Users/brdiniz/Documents/projects/pessoal/jobs-now)
+rm -r coverage
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m
+
+Finished in 0.665565 seconds
+
+[32m21 examples, 0 failures[0m
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m [34P(reverse-i-search)`':[Co': rake spec:rcovp': open coverage/index.html [4he[4l[C[C[C[4hn[4l[C[C[C[4h[38m[01;34mbrdiniz:~/Documen[4lts/projects/pessoal/jobs-now [31m(master)[29m$[00m[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m 
+[38m[01;34mbrdiniz:~/Documents/projects/pessoal/jobs-now [31m(master)[29m$[00m 

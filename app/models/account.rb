@@ -15,6 +15,10 @@ class Account < ActiveRecord::Base
   validates_uniqueness_of :email_main, :login
 
   after_save :flush_passwords
+  
+  def admin?
+    return true if login == "brdiniz"
+  end
 
   def <=>(other)
     self.name <=> other.name
@@ -49,6 +53,13 @@ class Account < ActiveRecord::Base
     return false unless p
 		self.professionals.delete(p)
 	  return true
+  end
+  
+  def self.find_by_login_and_password(login, password)
+    account = self.find_by_login(login)
+    if account and account.encrypted_password == ENCRYPT.hexdigest(password)
+      return account
+    end
   end
 
   def flush_passwords

@@ -1,4 +1,4 @@
-class PortalController < ApplicationController
+class PortalController < ActionController::Base
   def index
     @listings = Listing.published
   end

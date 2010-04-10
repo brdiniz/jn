@@ -68,7 +68,8 @@ pt_br:
         kind: "Tipo"
         name: Nome
         email_main: E-mail
-        password: senha
+        password: Senha
+        password_confirmation: Confirmar Senha
     errors:
       template:
         body: "Os seguintes erros impediram esta operação:"
@@ -94,4 +95,3 @@ pt_br:
         less_than_or_equal_to: "precisa ser menor ou igual a {{count}}"
         odd: "precisa ser ímpar"
         even: "precisa ser par"
-

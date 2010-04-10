@@ -14,6 +14,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :sessions
   
   map.root :controller => :portal 
+  
+  map.session_logout 'session/logout', :controller => :sessions, :action => :destroy
 
   map.job_details '/portal/:listing_id/:job_title', :controller => :portal, :action => :show
 
