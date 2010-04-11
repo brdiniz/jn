@@ -13,6 +13,7 @@
     <%= f.text_field :email_main, :class => 'text_field' %>
   </div>
 
+	<% @account.user = User.new if @account.user.nil? %>
   <% f.fields_for :user do |f2| %>
 	  <div class="group">
 	    <%= f2.label :login, t("activerecord.attributes.account.login", :default => "Login"), :class => :label %>

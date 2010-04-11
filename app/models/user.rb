@@ -1,16 +1,15 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
+  belongs_to :person, :polymorphic => true
+
   ENCRYPT = Digest::SHA256
   
   attr_reader :password
   attr_accessor :password_confirmation
-
   validates_presence_of :login
   validates_uniqueness_of :login
   
-  belongs_to :person, :polymorphic => true
-
   after_save :flush_passwords
   
   def admin?

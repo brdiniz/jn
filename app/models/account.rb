@@ -3,10 +3,11 @@ class Account < ActiveRecord::Base
 
   has_one :user, :as => :person
   accepts_nested_attributes_for :user
-  validates_presence_of :user
   validates_associated :user
   
+  validates_presence_of :user
   validates_uniqueness_of :email_main
+
   after_destroy :delete_user
     
   attr_accessor :kind

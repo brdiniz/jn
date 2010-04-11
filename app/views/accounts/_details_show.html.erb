@@ -10,5 +10,5 @@
 
         <p>
           <b><%= t("activerecord.attributes.account.login", :default => t("activerecord.labels.login", :default => "Login")) %>:</b>
-          <%= @account.login %>
+          <%= @account.user.login %>
         </p>

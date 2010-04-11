@@ -1,5 +1,4 @@
-class AccountsController < AuthenticateController
-  load_and_authorize_resource
+class AccountsController <  AuthenticateController
 
   def associate_professional
     @account = Account.find(params[:account_id])
