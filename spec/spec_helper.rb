@@ -25,8 +25,8 @@ Spec::Runner.configure do |config|
 
   share_examples_for "authenticated controller" do
     before(:each) do
-      u = Factory(:company, :login => "brdiniz", :password => "abc123")
-      s = Session.create!(:login => u.login, :password => "abc123")
+      c = Factory(:company, :user => Factory(:user, :login => "brdiniz", :password => "abc123"))
+      s = Session.create!(:login => c.user.login, :password => "abc123")
       @controller.session[:id] = s.id
       @controller.session[:current_user] = "brdiniz"
     end

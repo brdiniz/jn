@@ -10,7 +10,7 @@
         <tr class="<%= cycle("odd", "even") %>">
           <td><%= account.id %></td>
 					<td><%= link_to account.name, account_path(account) %></td>
-          <td><%= account.login %></td>
+          <td><%= account.user.login if account.user %></td>
 				  <td><%= account.class.name %></td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", account_path(account) %> |

@@ -3,21 +3,15 @@ class Account < ActiveRecord::Base
 
   has_one :user, :as => :person
   accepts_nested_attributes_for :user
-  
   validates_presence_of :user
   validates_associated :user
-  validates_uniqueness_of :email_main
   
+  validates_uniqueness_of :email_main
   after_destroy :delete_user
     
   attr_accessor :kind
   attr_accessor :login_associate
   attr_accessor :email_main_associate
-  
-  
-  def admin?
-    return true if login == "brdiniz"
-  end
 
   def <=>(other)
     self.name <=> other.name
@@ -33,11 +27,11 @@ class Account < ActiveRecord::Base
 	end
 	
 	def associate_professional
-     self.professionals << Professional.find_by_login(self.login_associate)
+     self.professionals << User.find_by_login(self.login_associate).person
   end
 
   def disconnect_professional
-    p = Professional.find_by_login(self.login_associate)
+    p = User.find_by_login(self.login_associate).try(:person)
     return false unless p
 		self.professionals.delete(p)
 	  return true

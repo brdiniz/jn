@@ -15,8 +15,8 @@ describe Account do
   end
   
   it "should not create a new instance when login exiting" do
-    Factory(:company, :login => "jn")
-    a = Factory.build(:company, :login => "jn")
+    Factory(:company, :user => Factory(:user, :login => "jn"))
+    a = Factory.build(:user, :login => "jn")
     
     a.should_not be_valid
     a.errors.on(:login).should_not be_blank
@@ -25,13 +25,13 @@ describe Account do
   it "should associate and list all emails in the company and professionals" do
     password = "abc123"
     
-    c1 =  Factory.build(:company, :password => password)
+    c1 =  Factory.build(:company, :user => Factory(:user, :password => password))
     
-    c = Factory(:company, :email_main => "email@company.com", :password => password)    
-    c.encrypted_password.should == c1.encrypted_password
+    c = Factory(:company, :email_main => "email@company.com", :user => Factory(:user, :password => password))
+    c.user.encrypted_password.should == c1.user.encrypted_password
     
     p = Factory(:professional, :email_main => "email@professional.com")
-    c.login_associate = p.login
+    c.login_associate = p.user.login
     
     c.associate_professional
     c.professionals.should include p

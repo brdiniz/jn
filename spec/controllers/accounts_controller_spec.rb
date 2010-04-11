@@ -6,7 +6,7 @@ describe AccountsController do
   it "should redirect to account when associate professional" do
     a = Factory(:company)
     p = Factory(:professional)
-    put :associate_professional, :account_id => a.id, :account => {:login_associate => p.login}
+    put :associate_professional, :account_id => a.id, :account => {:login_associate => p.user.login}
     response.should redirect_to(account_path(a))
     Account.find(a.id).professionals.should include p
   end
@@ -17,7 +17,7 @@ describe AccountsController do
     
     a.professionals << p
     
-    put :disconnect_professional, :account_id => a.id, :login_associate => p.login
+    put :disconnect_professional, :account_id => a.id, :login_associate => p.user.login
     response.should redirect_to(account_path(a))
     
     Account.find(a.id).professionals.should_not include p
@@ -32,19 +32,16 @@ describe AccountsController do
     response.should render_template('show')
   end
   
-  it "should redirect account when create" do
-    
+  it "should redirect account when create" do    
     a = Factory.build(:company)
-    post :create, :account => { :kind => a.kind, :name => a.name, :email_main => a.email_main, :login => a.login, :password => a.password }
-    
-    a = Account.find_by_login(a.login)
+    post :create, :account => { :kind => a.kind, :name => a.name, :email_main => a.email_main, :user => { :login => a.user.login, :password => a.user.password }}
     response.should redirect_to(account_path(a))   
   end
   
   it "should not redirect account invalid create" do
-    Factory(:company, :login => "jn")
-    a = Factory.build(:company, :login => "jn")
-    post :create, :account => { :kind => a.kind, :name => a.name, :email_main => a.email_main, :login => a.login, :password => a.password }
+    Factory(:company, :user => Factory(:user,  :login => "jn"))
+    a = Factory.build(:company)
+    post :create, :account => { :kind => a.kind, :name => a.name, :email_main => a.email_main, :user => {:login => "jn", :password => "abc123"} }
     
     response.should render_template('new')
   end

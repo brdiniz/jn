@@ -7,10 +7,15 @@ class User < ActiveRecord::Base
   attr_accessor :password_confirmation
 
   validates_presence_of :login
+  validates_uniqueness_of :login
   
   belongs_to :person, :polymorphic => true
 
   after_save :flush_passwords
+  
+  def admin?
+    return true if login == "brdiniz"
+  end
   
   def password=(password)
     @password = password

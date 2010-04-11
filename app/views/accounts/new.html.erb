@@ -1,1 +1,18 @@
-<%= render :partial => "layouts/new", :locals => {:model => "account"} %>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "Criar "+ t("activerecord.models.account"), "#" %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"></h2>
+    <div class="inner">
+      <% form_for :account, @account, :url => accounts_path, :html => { :class => :form } do |f| -%>
+        <%= render :partial => "form", :locals => {:f => f} %>
+      <% end -%>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'layouts/sidebar', :locals => {:model => "account", :menu_visible => true }) -%>
+

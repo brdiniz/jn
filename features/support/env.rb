@@ -61,7 +61,11 @@ class AuthenticateController
   before_filter :maintain_session_and_user
   
   def current_session
-    return Session.first.id
+    Session.first.id
+  end
+  
+  def current_user
+    User.find_by_login("brdiniz")
   end
 
   private

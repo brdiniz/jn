@@ -14,12 +14,12 @@ class Session < ActiveRecord::Base
   private
   def authenticate_account
     unless session_has_been_associated?
-      self.match = Account.find_by_login_and_password(self.login, self.password)
+      self.match = User.find_by_login_and_password(self.login, self.password)
     end
   end
  
   def associate_session_to_account
-    self.account_id ||= self.match.id
+    self.account_id ||= self.match.person.id
   end
  
   def session_has_been_associated?
