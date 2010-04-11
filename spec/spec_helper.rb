@@ -25,10 +25,8 @@ Spec::Runner.configure do |config|
 
   share_examples_for "authenticated controller" do
     before(:each) do
-      c = Factory(:company, :user => Factory(:user, :login => "brdiniz", :password => "abc123"))
-      s = Session.create!(:login => c.user.login, :password => "abc123")
-      @controller.session[:id] = s.id
-      @controller.session[:current_user] = "brdiniz"
+      @controller.session[:id] = Session.first.id
+      @controller.session[:current_user] = User.first.login
     end
   end
 
@@ -56,7 +54,7 @@ Spec::Runner.configure do |config|
   # RSpec uses its own mocking framework by default. If you prefer to
   # use mocha, flexmock or RR, uncomment the appropriate line:
   #
-  # config.mock_with :mocha
+  config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
   #

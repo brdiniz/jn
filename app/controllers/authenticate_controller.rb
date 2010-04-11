@@ -1,5 +1,4 @@
 class AuthenticateController < InheritedResources::Base
-  load_and_authorize_resource
   
   before_filter :maintain_session_and_user
 

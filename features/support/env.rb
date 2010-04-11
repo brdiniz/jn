@@ -65,12 +65,12 @@ class AuthenticateController
   end
   
   def current_user
-    User.find_by_login("brdiniz")
+    User.first.login
   end
 
   private
   def maintain_session_and_user
     @session = Session.first
-    @application_account = Account.first
+    @application_account = Session.first.account
   end
 end

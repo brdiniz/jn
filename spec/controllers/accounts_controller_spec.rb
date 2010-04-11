@@ -27,23 +27,22 @@ describe AccountsController do
     a = Factory(:company)
     
     put :disconnect_professional, :account_id => a.id, :login_associate => "1.1"
-
     response.should render_template('show')
   end
   
-  it "should redirect account when create" do    
-    a = Factory.build(:company)
-    post :create, :account => { :kind => a.kind, :name => a.name, :email_main => a.email_main }, :user => { :login => a.user.login, :password => a.user.password }
-    a = User.find_by_login(a.user.login).person
-    a.should_not be_blank
-    response.should redirect_to(account_path(a))
+  it "should redirect account when create" do
+    mock = Factory(:company)
+    mock.expects(:save).returns(true)
+    Account.stubs(:new).with({'these' => 'params'}).returns(mock)
+    post :create, :account => {:these => 'params'}
+    assigns[:account].should == mock
+    response.should redirect_to(account_url(mock))
   end
   
   it "should not redirect account invalid create" do
     Factory(:company, :user => Factory(:user,  :login => "jn"))
     a = Factory.build(:company)
     post :create, :account => { :kind => a.kind, :name => a.name, :email_main => a.email_main }, :user => {:login => "jn", :password => "abc123"}
-    
     response.should render_template('new')
   end
   

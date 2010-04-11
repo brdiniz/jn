@@ -1,4 +1,6 @@
 class ListingsController < AuthenticateController
+  load_and_authorize_resource :nested => [:account, :job]
+  
   belongs_to :account
   belongs_to :job
 

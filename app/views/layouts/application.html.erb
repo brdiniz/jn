@@ -20,7 +20,7 @@
       </div>      
       <div id="main-navigation">
         <ul class="wat-cf">
-            <% if @application_account.user.admin? %><li class="<%= request.path =~ /accounts/ ? 'active' : '' %>"><a href="<%= accounts_path %>">Conta</a></li><% end %>
+            <li class="<%= request.path =~ /accounts/ ? 'active' : '' %>"><a href="<%= accounts_path %>">Conta</a></li>
 				</ul>
       </div>
     </div>    

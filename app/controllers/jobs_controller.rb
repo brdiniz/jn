@@ -1,4 +1,5 @@
 class JobsController < AuthenticateController
+  load_and_authorize_resource :nested => [:account]
   belongs_to :account
   
   def destroy

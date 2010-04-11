@@ -2,12 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    
     user = User.find_by_login(user)
     alias_action :index, :create, :edit, :update, :show, :to => :manage_jobs
     alias_action :index, :create, :edit, :update, :show, :to => :manage_listings
     alias_action :index, :edit, :update, :show, :to => :my_account
-    
+
     if user.admin?
       can :manage, :all
     else
