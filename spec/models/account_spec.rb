@@ -14,6 +14,15 @@ describe Account do
     a.errors.on(:email_main).should_not be_blank
   end
   
+  it "should destroy an user when remove account" do
+    c = Factory(:company)
+    u = c.user
+    
+    u.should_not be_blank
+    c.destroy
+    User.find_by_login(u.login).should be_blank
+  end
+  
   it "should not create a new instance when login exiting" do
     Factory(:company, :user => Factory(:user, :login => "jn"))
     a = Factory.build(:user, :login => "jn")

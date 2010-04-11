@@ -24,7 +24,7 @@ class Ability
       end
       
       can :manage_company, Company do |c|
-        c.professionals.include?(user.person)
+        c.professionals.include?(user.person) || c == user.person
       end
     end
   end

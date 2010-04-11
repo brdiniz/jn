@@ -2,10 +2,13 @@
   <h3>Ações para <%= t("activerecord.models.#{model}") %></h3>
   <ul class="navigation">
     <% if menu_visible %>
-      <li><%= link_to "Listar " + t("activerecord.models.#{model.pluralize}"), send("#{model.pluralize}_path")  %></li>
-      <li><%= link_to "Criar " + t("activerecord.models.#{model}"), send("new_#{model}_path")  %></li>
+			<% if can? :index, eval("@#{model}s") %>
+      	<li><%= link_to "Listar " + t("activerecord.models.#{model.pluralize}"), send("#{model.pluralize}_path")  %></li>
+			<% end %>
+			<% if can? :new, eval("@#{model}") %>
+      	<li><%= link_to "Criar " + t("activerecord.models.#{model}"), send("new_#{model}_path")  %></li>
+			<% end %>
     <% end %>
     <%= render(:partial => 'sidebar') -%>
   </ul>
 </div>
-

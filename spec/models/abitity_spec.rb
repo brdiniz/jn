@@ -9,7 +9,10 @@ describe Ability do
     j.company.professionals << p
     
     Ability.new(p.user.login).can?(:manage_jobs, j).should be(true)
+    Ability.new(p.user.login).can?(:manage_company, j.company).should be(true)
+    
     Ability.new(p1.user.login).can?(:manage_jobs, j).should be(false)
+    
   end
   
   it "should show company when professional is an associate in company" do
@@ -28,6 +31,5 @@ describe Ability do
     
     Ability.new(c.user.login).can?(:my_account, c).should be(true)
     Ability.new(c.user.login).can?(:my_account, c1).should be(false)
-  end
-  
+  end  
 end
