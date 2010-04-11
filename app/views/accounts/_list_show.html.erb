@@ -12,7 +12,7 @@
 							<td><%= professional.id %></td>
 							<td><%= link_to professional.name, account_path(professional) %></td>
 							<td class="last">
-								<%= link_to "Desassociar", account_disconnect_professional_path(@account, professional.login) %>
+								<%= link_to "Desassociar", account_disconnect_professional_path(@account, professional.user.login) %>
 							</td>
 						</tr>
 					<% end %>
