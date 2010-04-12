@@ -28,7 +28,13 @@ class Account < ActiveRecord::Base
 	end
 	
 	def associate_professional
-     self.professionals << User.find_by_login(self.login_associate).person
+    errors.add_on_blank(:login_associate, 'é um campo obrigatório')
+	  u = User.find_by_login(self.login_associate)
+	  errors.add(:login_associate, "não existe") unless u
+	  errors.add(:login_associate, "já está associado") if u && self.professionals.include?(u.person)
+	  return false unless errors.empty?
+    self.professionals << u.person
+    return true
   end
 
   def disconnect_professional

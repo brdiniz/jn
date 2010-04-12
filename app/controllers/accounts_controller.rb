@@ -16,12 +16,14 @@ class AccountsController <  AuthenticateController
   def disconnect_professional
     @account = Account.find(params[:account_id])
 		@account.login_associate = params[:login_associate]
-		if @account.disconnect_professional
-			flash[:notice] = "Desassociação de Conta realizada com sucesso!"
-			redirect_to(account_path(@account))
-		else
-			render :action => "show"
-		end	
+		if request.put?
+  		if @account.disconnect_professional
+  			flash[:notice] = "Desassociação de Conta realizada com sucesso!"
+  			redirect_to(account_path(@account))
+  		else
+  			render :action => "show"
+  		end
+  	end
   end
 
   def create

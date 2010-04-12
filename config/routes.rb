@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :accounts do |account|
     account.associate_professional "associate_professional", :controller => "accounts", :action => "associate_professional", :method => {:get, :post}
-    account.disconnect_professional "disconnect_professional/:login_associate", :controller => "accounts", :action => "disconnect_professional", :method => "put"
+    account.disconnect_professional "disconnect_professional/:login_associate", :controller => "accounts", :action => "disconnect_professional"
 		account.resources :emails
     account.resources :jobs do |job|
       job.resources :listings do |listing|
