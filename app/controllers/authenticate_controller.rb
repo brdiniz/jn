@@ -16,11 +16,4 @@ class AuthenticateController < InheritedResources::Base
     logout unless @session
     @application_account = @session.account
   end
-  
-  def logout
-    @session = Session.find_by_id(current_session)
-    @session.destroy if @session
-    session[:id] = nil
-    redirect_to(new_session_path)
-  end
 end
