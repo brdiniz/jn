@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   belongs_to :person, :polymorphic => true
 
   ENCRYPT = Digest::SHA256
-  
+
+  attr_reader :password_old
   attr_reader :password
   attr_accessor :password_confirmation
   validate :verify_password_and_confirmation

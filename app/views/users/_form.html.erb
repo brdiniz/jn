@@ -1,0 +1,22 @@
+<div class="group">
+  <%= f.label :login, t("activerecord.attributes.account.login", :default => "Login"), :class => :label %>
+  <%= @user.login %>
+</div>
+<div class="group">
+	<%= f.label :password_old, "Senha atual", :class => :label %>
+	<%= f.password_field :password_old, :class => 'text_field' %>
+</div>	  
+<div class="group">
+	<%= f.label :password, "Nova senha", :class => :label %>
+	<%= f.password_field :password, :class => 'text_field' %>
+</div>
+<div class="group">
+	<%= f.label :password_confirmation, "Confirmar Nova Senha", :class => :label %>
+	<%= f.password_field :password_confirmation, :class => 'text_field' %>
+</div>
+
+<div class="group navform wat-cf">
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
+  </button>  
+</div>
