@@ -1,7 +1,9 @@
-  <div class="group">
-    <%= f.label :kind, t("activerecord.attributes.account.kind", :default => "Kind"), :class => :label %>
-    <%= f.select :kind, Account::KINDS.collect, :class => 'text_field' %>
-  </div>
+	<% if @account && @account.new_record? %>
+	  <div class="group">
+	    <%= f.label :kind, t("activerecord.attributes.account.kind", :default => "Kind"), :class => :label %>
+	    <%= f.select :kind, Account::KINDS.collect, :class => 'text_field' %>
+	  </div>
+	<% end %>
 
   <div class="group">
     <%= f.label :name, t("activerecord.attributes.account.name", :default => "Name"), :class => :label %>
@@ -13,23 +15,28 @@
     <%= f.text_field :email_main, :class => 'text_field' %>
   </div>
 
-	<% @account.user = User.new if @account.user.nil? %>
-  <% f.fields_for :user do |f2| %>
-	  <div class="group">
-	    <%= f2.label :login, t("activerecord.attributes.account.login", :default => "Login"), :class => :label %>
-	    <%= f2.text_field :login, :class => 'text_field' %>
-	  </div>
 		<% if @account && @account.new_record? %>
-	  <div class="group">
-	    <%= f2.label :password, t("activerecord.attributes.account.password", :default => "Password"), :class => :label %>
-	    <%= f2.password_field :password, :class => 'text_field' %>
-	  </div>
-	  <div class="group">
-	    <%= f2.label :password_confirmation, t("activerecord.attributes.account.password_confirmation", :default => "Password Confirmation"), :class => :label %>
-	    <%= f2.password_field :password_confirmation, :class => 'text_field' %>
-	  </div>
+			<% @account.user = User.new if @account.user.nil? %>
+		  <% f.fields_for :user do |f2| %>
+			  <div class="group">
+			    <%= f2.label :login, t("activerecord.attributes.account.login", :default => "Login"), :class => :label %>
+			    <%= f2.text_field :login, :class => 'text_field' %>
+			  </div>	  
+				<div class="group">
+		    	<%= f2.label :password, t("activerecord.attributes.account.password", :default => "Password"), :class => :label %>
+		    	<%= f2.password_field :password, :class => 'text_field' %>
+		  	</div>
+		  	<div class="group">
+		    	<%= f2.label :password_confirmation, t("activerecord.attributes.account.password_confirmation", :default => "Password Confirmation"), :class => :label %>
+		    	<%= f2.password_field :password_confirmation, :class => 'text_field' %>
+		  	</div>
+			<% end %>
+		<% else %>
+  		<div class="group">
+		    <%= f.label :login, t("activerecord.attributes.account.login", :default => "Login"), :class => :label %>
+				<%= @account.user.login %>
+			</div>
 		<% end %>
-	<% end %>
         
 <div class="group navform wat-cf">
   <button class="button" type="submit">
