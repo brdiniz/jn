@@ -10,9 +10,9 @@
 					<% @account.professionals.each do |professional| %>
 						<tr class='<%= cycle("odd", "even") %>'>
 							<td><%= professional.id %></td>
-							<td><%= link_to professional.name, account_path(professional) %></td>
+							<td><%= professional.name %></td>
 							<td class="last">
-								<%= link_to "Desassociar", account_disconnect_professional_path(@account, professional.user.login) if can? :update, @account %>
+								<%= link_to "Desassociar", account_disconnect_professional_path(@account, professional.user.login), :method => "put" if can? :update, @account %>
 							</td>
 						</tr>
 					<% end %>

@@ -5,8 +5,8 @@ class Ability
     user = User.find_by_login(user)
     alias_action :index, :new, :create, :edit, :update, :show, :to => :manage_jobs
     alias_action :index, :new, :create, :edit, :update, :show, :to => :manage_listings
-    alias_action :index, :edit, :update, :show, :to => :my_account
-    alias_action :show, :to => :manage_company 
+    alias_action :index, :edit, :update, :show,  :to => :my_account
+    alias_action :show, :update, :to => :manage_company
 
     if user.admin?
       can :manage, :all
