@@ -12,7 +12,7 @@
 							<td><%= professional.id %></td>
 							<td><%= professional.name %></td>
 							<td class="last">
-								<%= link_to "Desassociar", account_disconnect_professional_path(@account, professional.user.login), :method => "put" if can? :update, @account %>
+								<%= link_to "Desassociar", account_disconnect_professional_path(@account, professional.user.login), :method => "put" if @session.account.user.admin? %>
 							</td>
 						</tr>
 					<% end %>
@@ -48,8 +48,7 @@
 								<td><%= company.name %></td>
 								<td class="last">
 									<%= link_to "#{t("web-app-theme.show", :default => "Show")}", account_path(company) %> |
-									<%= link_to "Criar vaga", new_account_job_path(company) %> | 
-									<%= link_to "Desassociar", "#" %>
+									<%= link_to "Criar vaga", new_account_job_path(company) %>
 								</td>
 							</tr>
              <% end %>

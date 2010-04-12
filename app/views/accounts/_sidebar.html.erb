@@ -1,6 +1,6 @@
 <% if @account.class.name == "Company" && !@account.new_record? %>
   <li><%= link_to "Criar Vaga", new_account_job_path(@account) %></li>
-	<% if can? :update, @account %>
+	<% if @application_account.user.admin? %>
   	<li><%= link_to "Associar Profissional", account_associate_professional_path(@account) %></li>
 	<% end %>
 <% end %>
