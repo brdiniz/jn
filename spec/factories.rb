@@ -8,6 +8,7 @@ end
 Factory.define :user do |u|
   u.sequence(:login) { |n| "login.#{n}" }
   u.password "ABC123"
+  u.password_confirmation "ABC123"
 end
 
 Factory.define :professional do |f|

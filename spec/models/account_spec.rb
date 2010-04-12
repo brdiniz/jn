@@ -34,9 +34,9 @@ describe Account do
   it "should associate and list all emails in the company and professionals" do
     password = "abc123"
     
-    c1 =  Factory.build(:company, :user => Factory(:user, :password => password))
+    c1 =  Factory.build(:company, :user => Factory(:user, :password => password, :password_confirmation => password))
     
-    c = Factory(:company, :email_main => "email@company.com", :user => Factory(:user, :password => password))
+    c = Factory(:company, :email_main => "email@company.com", :user => Factory(:user, :password => password, :password_confirmation => password))
     c.user.encrypted_password.should == c1.user.encrypted_password
     
     p = Factory(:professional, :email_main => "email@professional.com")

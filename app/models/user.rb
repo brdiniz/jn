@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   
   attr_reader :password
   attr_accessor :password_confirmation
+  validate :verify_password_and_confirmation
   validates_presence_of :login
   validates_uniqueness_of :login
   
@@ -21,6 +22,10 @@ class User < ActiveRecord::Base
     unless password_is_not_being_updated?
       self.encrypted_password = ENCRYPT.hexdigest(password)
     end
+  end
+  
+  def verify_password_and_confirmation
+    errors.add(:password_confirmation, " diferente da senha informada") if password != password_confirmation
   end
 
   def password_is_not_being_updated?
