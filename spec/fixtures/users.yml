@@ -1,5 +1,5 @@
 user1:
   login: brdiniz
-  encrypted_password: "ABC123"
+  encrypted_password: "68d820783c3a293e38db60f3cc67b5454642d8327e7292e2de133c6fb61115e1"
   person_id: <%= Fixtures.identify(:account1) %>  
   person_type: 'Account'
