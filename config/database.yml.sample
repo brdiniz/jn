@@ -21,7 +21,7 @@ production:
   adapter: mysql
   database: jobs
   username: root
-	password: root
+  password: root
   pool: 5
   timeout: 5000
 
