@@ -13,4 +13,9 @@ describe SessionsController do
     post :create, :session => { :login => c.user.login, :password => "ZXV098"}
     response.should render_template('new')
   end
+  
+  it "should destroy session" do
+    delete :destroy
+    response.should redirect_to(new_session_path)
+  end
 end

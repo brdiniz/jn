@@ -14,8 +14,8 @@ class SessionsController < InheritedResources::Base
   end
   
   def destroy
-    @session = Session.find(session[:id])
-    @session.destroy
+    @session = Session.find_by_id(session[:id])
+    @session.destroy if @session
     session[:id] = nil
     redirect_to(new_session_path)
   end
