@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   ENCRYPT = Digest::SHA256
 
-  attr_reader :password_old
+  attr_accessor :password_old
   attr_reader :password
   attr_accessor :password_confirmation
   validate :verify_password_and_confirmation
@@ -27,15 +27,16 @@ class User < ActiveRecord::Base
   
   def verify_password_and_confirmation
     errors.add(:password_confirmation, " diferente da senha informada") if password != password_confirmation
+    return !errors.empty?
   end
 
   def password_is_not_being_updated?
-   self.id and self.password.blank?
+    self.id and self.password.blank?
   end
   
   def self.find_by_login_and_password(login, password)
     account = self.find_by_login(login)
-    if account and account.encrypted_password == ENCRYPT.hexdigest(password)
+    if account and account.encrypted_password == ENCRYPT.hexdigest(password.to_s)
       return account
     end
   end
