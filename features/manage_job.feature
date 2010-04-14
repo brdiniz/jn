@@ -9,6 +9,7 @@ Feature: Manage job
 		And I follow "Criar Vaga"
 		And I should see "Ações para Vaga"
 	  When I fill in "job_title" with "Ruby on Rails development Senior"
+		And I fill in "job_opening" with "10"
 		And I fill in "job_salary_info" with "15000 U$$"
 		And I fill in "job_description" with "Description Job for Ruby on Rails"
 		And I press "Salvar"

@@ -62,6 +62,7 @@ pt_br:
           "false": Desativada
       job:
         title: Título
+        opening: Quantidade de vagas
         salary_info: Benefícios
         description: Descrição
         ref_info: Referência

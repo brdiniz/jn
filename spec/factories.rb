@@ -22,6 +22,7 @@ Factory.define :job do |j|
   j.title "Título"
   j.salary_info "atrativo"
   j.description "Description"
+  j.opening "10"
   j.association :company, :factory => :company
 end
 
