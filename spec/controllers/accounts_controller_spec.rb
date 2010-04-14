@@ -6,7 +6,7 @@ describe AccountsController do
   it "should redirect to account when associate professional" do
     a = Factory(:company)
     p = Factory(:professional)
-    put :associate_professional, :account_id => a.id, :account => {:login_associate => p.user.login}
+    put :associate_professional, :account_id => a.id, :account => {:login_associate => p.user.login, :email_main_associate => p.email_main}
     response.should redirect_to(account_path(a))
     Account.find(a.id).professionals.should include p
   end

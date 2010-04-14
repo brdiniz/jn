@@ -32,6 +32,7 @@ class Account < ActiveRecord::Base
 	  u = User.find_by_login(self.login_associate)
 	  errors.add(:login_associate, "não existe") unless u
 	  errors.add(:login_associate, "já está associado") if u && self.professionals.include?(u.person)
+	  errors.add(:email_main_associate, "não pertence ao login") if u && u.person.email_main != self.email_main_associate
 	  return false unless errors.empty?
     self.professionals << u.person
     return true

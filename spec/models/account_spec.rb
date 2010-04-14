@@ -41,6 +41,7 @@ describe Account do
     
     p = Factory(:professional, :email_main => "email@professional.com")
     c.login_associate = p.user.login
+    c.email_main_associate = p.email_main
     
     c.associate_professional
     c.professionals.should include p
