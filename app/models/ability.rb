@@ -7,7 +7,7 @@ class Ability
     alias_action :index, :new, :create, :edit, :update, :show, :to => :manage_listings
     alias_action :index, :edit, :update, :show, :to => :my_account
     alias_action :show, :update, :to => :manage_company
-    alias_action :show, :edit, :update, :to => :my_user
+    alias_action :password, :to => :my_user
 
     if user.admin?
       can :manage, :all
@@ -24,12 +24,12 @@ class Ability
         a == user.person
       end
       
-      can :my_user, User do |u|
-        u == user
-      end
-      
       can :manage_company, Company do |c|
         c.professionals.include?(user.person) || c == user.person
+      end
+
+      can :my_user, User do |u|
+        u || (u.login == user.login)
       end
     end
   end

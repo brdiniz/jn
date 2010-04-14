@@ -17,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => :sessions, :action => :new
 
-  map.user_alter_password 'user/password', :controller => :users, :action => :password 
+  map.user_alter_password 'users/password', :controller => :users, :action => :password 
   
   map.session_logout 'session/logout', :controller => :sessions, :action => :destroy
 
