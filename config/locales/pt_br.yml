@@ -56,13 +56,13 @@ pt_br:
         region: Região
         location: Localização
         email: E-mail
+        opening: Quantidade de vagas
         day_count: Quantidade de dias para o anuncio
         active:
           "true": Ativada
           "false": Desativada
       job:
         title: Título
-        opening: Quantidade de vagas
         salary_info: Benefícios
         description: Descrição
         ref_info: Referência

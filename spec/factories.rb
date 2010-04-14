@@ -22,7 +22,6 @@ Factory.define :job do |j|
   j.title "Título"
   j.salary_info "atrativo"
   j.description "Description"
-  j.opening "10"
   j.association :company, :factory => :company
 end
 
@@ -30,6 +29,7 @@ Factory.define :listing do |l|
   l.region "SP"
   l.location "São Paulo"
   l.email "professional@jn.com"
+  l.opening "10"
   l.day_count "10"
   l.association :job, :factory => :job
 end

@@ -25,6 +25,11 @@ $(function() {
     <%= f.text_field :email, :class => 'text_field' %>
   </div>
 
+	<div class="group">
+	  <%= f.label :opening, t("activerecord.attributes.listing.opening", :default => "opening"), :class => :label %>
+	  <%= f.text_field :opening, :class => 'text_field' %>
+	</div>
+
   <div class="group">
     <%= f.label :day_count, t("activerecord.attributes.listing.day_count", :default => "Day count"), :class => :label %>
     <%= f.text_field :day_count, :class => 'text_field' %>

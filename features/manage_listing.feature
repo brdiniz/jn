@@ -11,6 +11,7 @@ Feature: Manage listing
 		And I should see "Vaga: work_1"
 	  When I fill in "listing_region" with "BRA, SP"
 		And I fill in "listing_location" with "São Paulo"
+		And I fill in "listing_opening" with "10"
 		And I fill in "listing_email" with "hr@account-now.com.br"
 		And I fill in "listing_day_count" with "10"
 		And I press "Salvar"
