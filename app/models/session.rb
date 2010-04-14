@@ -14,7 +14,9 @@ class Session < ActiveRecord::Base
   private
   def authenticate_account
     unless session_has_been_associated?
-      self.match = User.find_by_login_and_password(self.login, self.password)
+      u = User.find_by_login_and_password(self.login, self.password)
+      self.match = u if u
+      errors.add_on_blank(:password) unless u
     end
   end
  

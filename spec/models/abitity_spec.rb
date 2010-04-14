@@ -27,7 +27,6 @@ describe Ability do
     c = Factory(:company)
     c1 = Factory(:company)
     
-    Ability.new(c.user.login).can?(:my_user, c.user).should be(true)
     Ability.new(c.user.login).can?(:my_account, c).should be(true)
     Ability.new(c.user.login).can?(:my_account, c1).should be(false)
   end  

@@ -26,7 +26,7 @@ Spec::Runner.configure do |config|
   share_examples_for "authenticated controller" do
     before(:each) do
       @controller.session[:id] = Session.first.id
-      @controller.session[:current_user] = User.first.login
+      @controller.session[:current_user] = Session.first.account.user.login
     end
   end
 
