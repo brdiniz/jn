@@ -19,4 +19,9 @@
   <button class="button" type="submit">
     <%= image_tag("web-app-theme/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
   </button>  
+	<% if @application_account.user.admin? %>
+  <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.cancel", :default => "Cancel")}")} #{t("web-app-theme.cancel", :default => "Cancel")}", accounts_path, :class => "button" %> 
+	<% else %>
+  <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.cancel", :default => "Cancel")}")} #{t("web-app-theme.cancel", :default => "Cancel")}", account_path(@application_account), :class => "button" %>
+	<% end %>
 </div>
