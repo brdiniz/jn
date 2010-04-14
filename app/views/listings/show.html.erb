@@ -15,6 +15,12 @@
         </p>
 
         <p>
+          <b><%= t("activerecord.attributes.listing.opening", :default => t("activerecord.labels.opening", :default => "Opening")) %>:</b>
+          <%= @listing.opening %>
+        </p>
+
+
+        <p>
           <b><%= t("activerecord.attributes.listing.region", :default => t("activerecord.labels.region", :default => "Region")) %>:</b>
           <%= @listing.region %>
         </p>

@@ -5,6 +5,7 @@
 					<th>Data da ativação</th>
 					<th>Data da expiração</th>
 					<th>E-mail</th>
+					<th>Vagas</th>
 					<th>Status</th>
 					<th></th>
 					<% @job.listings.each do |listing| %>
@@ -12,6 +13,7 @@
 							<td><%= link_to listing.actived_at.to_date, account_job_listing_path(@account, @job, listing) %></td>
 							<td><%= listing.expirate_date %></td>
 							<td><%= listing.email %></td>
+							<td><%= listing.opening %></td>
 							<td><%= t("activerecord.attributes.listing.active.#{listing.active.to_s}", :default => listing.active.to_s) %></td>
 							<td class="last">
 								<%= link_to "Ativar", account_job_listing_enable_path(@account, @job, listing), :method => "put" if !listing.active %>
