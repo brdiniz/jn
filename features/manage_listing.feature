@@ -5,10 +5,10 @@ Feature: Manage listing
 
 	Scenario: Create a new listing in job
 	  Given I have a new company with name "account-now"
-		And I have a new job with title "work_1" in account with name "account-now"
-		And I am on the show "work_1" job in the "account-now" account
+		And I have a new job with title "Java Development" in account with name "account-now"
+		And I am on the show "Java Development" job in the "account-now" account
 		And I follow "Criar Anuncio"
-		And I should see "Título: work_1"
+		And I should see "Título: Java Development"
 	  When I fill in "listing_region" with "BRA, SP"
 		And I fill in "listing_location" with "São Paulo"
 		And I fill in "listing_opening" with "10"
