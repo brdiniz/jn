@@ -53,6 +53,7 @@ pt_br:
       user: Usuário
     attributes:
       listing:
+        code: Código
         region: Região
         location: Localização
         email: E-mail

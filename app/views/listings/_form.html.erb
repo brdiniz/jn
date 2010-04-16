@@ -9,6 +9,11 @@ $(function() {
   </p>
 
 	<div class="group">
+	  <%= f.label :code, t("activerecord.attributes.listing.code", :default => "code"), :class => :label %>
+	  <%= f.text_field :code, :class => 'text_field' %>
+	</div>
+
+	<div class="group">
 	  <%= f.label :opening, t("activerecord.attributes.listing.opening", :default => "opening"), :class => :label %>
 	  <%= f.text_field :opening, :class => 'text_field' %>
 	</div>

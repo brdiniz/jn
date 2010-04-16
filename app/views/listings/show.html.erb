@@ -3,7 +3,7 @@
     <ul class="wat-cf">
       <li class="first"><%= link_to "Conta " +  @account.name, account_path(@account) %></li>
       <li><%= link_to "Vaga #{@job.name}", account_job_path(@account, @job)  %></li>
-      <li class="last active"><%= link_to "Anuncio #{@listing.day_count}", account_job_listing_path %></li>
+      <li class="last active"><%= link_to "Anuncio #{@listing.code}", account_job_listing_path %></li>
     </ul>
   </div>          
   <div class="content">
@@ -12,6 +12,11 @@
         <p>
           <b>Título:</b>
           <%= @job.title %>
+        </p>
+
+        <p>
+          <b>Código:</b>
+          <%= @listing.code %>
         </p>
 
         <p>

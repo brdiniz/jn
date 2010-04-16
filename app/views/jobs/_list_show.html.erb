@@ -2,6 +2,7 @@
 				<h1>Anuncios</h1>
 
 	      <table class="table" id="listings_table">
+					<th>Código</th>
 					<th>Data da ativação</th>
 					<th>Data da expiração</th>
 					<th>E-mail</th>
@@ -10,7 +11,8 @@
 					<th></th>
 					<% @job.listings.each do |listing| %>
 						<tr class='<%= cycle("odd", "even") %>'>
-							<td><%= link_to listing.actived_at.to_date, account_job_listing_path(@account, @job, listing) %></td>
+							<td><%= link_to listing.code, account_job_listing_path(@account, @job, listing) %></td>
+							<td><%= listing.actived_at.to_date %></td>
 							<td><%= listing.expirate_date %></td>
 							<td><%= listing.email %></td>
 							<td><%= listing.opening %></td>
