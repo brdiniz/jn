@@ -31,5 +31,6 @@ Factory.define :listing do |l|
   l.email "professional@jn.com"
   l.opening "10"
   l.day_count "10"
+  l.code nil
   l.association :job, :factory => :job
 end
