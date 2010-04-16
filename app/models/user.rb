@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   attr_accessor :password_confirmation
   
   validate :verify_password_and_confirmation
+  validates_format_of :login, :with => /^[a-zA-Z0-9]+$/
   validates_presence_of :login
   validates_uniqueness_of :login
   

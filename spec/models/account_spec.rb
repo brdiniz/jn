@@ -3,7 +3,9 @@ require 'spec_helper'
 describe Account do
   
   it "should create a new instance given valid attributes" do
-    Factory(:company)
+    a = Factory.build(:company)
+    a.save
+    a.should be_valid
   end
   
   it "should not create a new instance when email main exiting" do

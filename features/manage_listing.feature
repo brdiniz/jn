@@ -4,9 +4,9 @@ Feature: Manage listing
   I want be able to create, update and delete listings
 
 	Scenario: Create a new listing in job
-	  Given I have a new company with name "account-now"
-		And I have a new job with title "Java Development" in account with name "account-now"
-		And I am on the show "Java Development" job in the "account-now" account
+	  Given I have a new company with name "accountnow"
+		And I have a new job with title "Java Development" in account with name "accountnow"
+		And I am on the show "Java Development" job in the "accountnow" account
 		And I follow "Criar Anuncio"
 		And I should see "Título: Java Development"
 	  When I fill in "listing_region" with "BRA, SP"
@@ -23,9 +23,9 @@ Feature: Manage listing
 		And I should see "Data da validade"
 	
 	Scenario: Display error messages when trying to save by not specifying the required fields
-		Given I have a new company with name "account-now"
-		And I have a new job with title "Java Development" in account with name "account-now"
-		And I am on the show "Java Development" job in the "account-now" account
+		Given I have a new company with name "accountnow"
+		And I have a new job with title "Java Development" in account with name "accountnow"
+		And I am on the show "Java Development" job in the "accountnow" account
 		And I follow "Criar Anuncio"
 		And I should see "Título: Java Development"
 		And I press "Salvar"

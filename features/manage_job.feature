@@ -4,8 +4,8 @@ Feature: Manage job
   I want be able to create, update and delete jobs
 
 	Scenario: Create a new Job
-	  Given I have a new company with name "account-now"
-		And I am on the "account-now" account showing screen
+	  Given I have a new company with name "accountnow"
+		And I am on the "accountnow" account showing screen
 		And I follow "Criar Vaga"
 		And I should see "Ações para Vaga"
 	  When I fill in "job_title" with "Ruby on Rails development Senior"
@@ -16,8 +16,8 @@ Feature: Manage job
 		And I should see "Ruby on Rails development Senior"
 
 	Scenario: Display error messages when trying to save by not specifying the required fields
-	  Given I have a new company with name "account-now"
-		And I am on the "account-now" account showing screen
+	  Given I have a new company with name "accountnow"
+		And I am on the "accountnow" account showing screen
 		And I follow "Criar Vaga"
 		And I should see "Ações para Vaga"
 		And I press "Salvar"
