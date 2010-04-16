@@ -21,4 +21,12 @@ Feature: Manage account
 		And I should see "Profissionais"
 		And I should see "Vagas"
 
-
+	Scenario: Display error messages when trying to save by not specifying the required fields
+	  Given I am on the list of account
+		And I should see "Ações para Conta"
+		And I follow "Criar conta"
+		And I press "Salvar"
+	  Then I should not see "Criação de Conta realizada com sucesso"
+		And I should see "Nome é um campo obrigatório"
+		And I should see "E-mail é um campo obrigatório"
+		And I should see "Login é um campo obrigatório"

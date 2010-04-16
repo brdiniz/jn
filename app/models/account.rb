@@ -5,7 +5,7 @@ class Account < ActiveRecord::Base
   accepts_nested_attributes_for :user
   validates_associated :user
   
-  validates_presence_of :user
+  validates_presence_of :name, :user, :email_main
   validates_uniqueness_of :email_main
 
   after_destroy :delete_user

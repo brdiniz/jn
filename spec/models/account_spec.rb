@@ -35,6 +35,8 @@ describe Account do
     password = "abc123"
     
     c1 =  Factory.build(:company, :user => Factory(:user, :password => password, :password_confirmation => password))
+    c1.save
+    puts c1.errors.full_messages
     
     c = Factory(:company, :email_main => "email@company.com", :user => Factory(:user, :password => password, :password_confirmation => password))
     c.user.encrypted_password.should == c1.user.encrypted_password

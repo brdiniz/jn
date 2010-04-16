@@ -5,7 +5,7 @@ class Listing < ActiveRecord::Base
   before_create :active_listing
 	before_save :generate_code
                                   
-  named_scope :published, {:conditions => ["ADDDATE(actived_at, day_count) > ?", Time.now.to_date + 1.days] }
+  named_scope :published, {:conditions => ["ADDDATE(actived_at, day_count) > ?", Time.now.to_date + 1.days], :order => ["actived_at DESC"] }
    
  	validates_numericality_of :opening, :less_than_or_equal_to => 109, :greater_than_or_equal_to => 1
 	validates_numericality_of :day_count, :less_than_or_equal_to => 30, :greater_than_or_equal_to => 10, :on => :create

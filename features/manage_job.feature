@@ -15,4 +15,13 @@ Feature: Manage job
 	  Then I should see "Criação de Vaga realizada com sucesso"
 		And I should see "Ruby on Rails development Senior"
 
-
+	Scenario: Display error messages when trying to save by not specifying the required fields
+	  Given I have a new company with name "account-now"
+		And I am on the "account-now" account showing screen
+		And I follow "Criar Vaga"
+		And I should see "Ações para Vaga"
+		And I press "Salvar"
+	  Then I should not see "Criação de Vaga realizada com sucesso"
+		And I should see "Título é um campo obrigatório, é muito curto (não menos do que 10 caracteres)"
+		And I should see "Benefícios é um campo obrigatório, é muito curto (não menos do que 10 caracteres)"
+		And I should see "Descrição é um campo obrigatório, é muito curto (não menos do que 50 caracteres)"

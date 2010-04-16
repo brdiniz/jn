@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessor :password_old
   attr_reader :password
   attr_accessor :password_confirmation
+  
   validate :verify_password_and_confirmation
   validates_presence_of :login
   validates_uniqueness_of :login
