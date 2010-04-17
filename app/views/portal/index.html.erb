@@ -1,8 +1,8 @@
 <% @listings.each do |listing| -%>
 <div class="post" id="post-<%= listing.id %>">
-	<h2><%= listing.job.title %> em <%= listing.region %>, <%= listing.location %> - <%= listing.created_at.strftime("%d/%m/%Y") %></h2>
+	<h2><%= listing.job.title %> em <%= listing.region %>, <%= listing.location %></h2>
 	<div class="info">
-		<span class="date">11/04/2010</span>
+		<span class="date"><%= listing.created_at.strftime("%d/%m/%Y") %></span>
 		<span class="author">
 			<a href="#" title="<%= listing.job.company.name %>"><%= listing.job.company.name %></a>
 		</span>									
