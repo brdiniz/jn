@@ -1,0 +1,18 @@
+<table class="table">
+  <tr>             
+    <th class="first">ID</th>
+		<th>Nome</th>
+    <th class="last">&nbsp;</th>
+  </tr>
+  <% @categories.each do |category| -%>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td><%= category.id %></td>
+		<td><%= link_to category.name, category %></td>
+    <td class="last">
+      <%= link_to "#{t("web-app-theme.show", :default => "Show")}", category %> |
+      <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_category_path(category) %> |
+      <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", category, :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+    </td>
+  </tr>          
+  <% end -%>
+</table>

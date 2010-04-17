@@ -198,23 +198,9 @@ function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!
 		</div>
 		<div id="categories-2" class="widget widget_categories"><h3>Categorias</h3>		
 			<ul>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">DBA Oracle</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">DBA SQL Server</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">JAVA</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">.NET</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">PMI</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">ITIL</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">CMMI</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">UML</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">SharePoint</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">Ruby On Rails</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">Scrum</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">SysAdmin - Windows</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">SysAdmin - Linux</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">Suporte Técnico</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">Telecom</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">Recursos Humanos</a> (N)</li>
-				<li class="cat-item cat-item-77729"><a href="#" title="Exibe informação para o usuário">Outros</a> (N)</li>
+				<% for category in Category.all %>
+					<li class="cat-item cat-item-77729"><%= link_to category.name, "#" %> (0)</li>
+				<% end %>
 			</ul>
 		</div>
 		<div id="twitter-4" class="widget widget_twitter">

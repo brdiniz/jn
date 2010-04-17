@@ -12,6 +12,8 @@ class Ability
     if user.admin?
       can :manage, :all
     else
+      can :read, :category
+      
       can :manage_jobs, Job do |j|
         j.company.professionals.include?(user.person) || j.company == user.person
       end

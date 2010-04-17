@@ -21,6 +21,7 @@
         <ul class="wat-cf">
 					<% if @application_account.user.admin? %>
 	          <li class="<%= request.path =~ /accounts/ ? 'active' : '' %>"><a href="<%= accounts_path %>">Conta</a></li>
+	          <li class="<%= request.path =~ /categories/ ? 'active' : '' %>"><a href="<%= categories_path %>">Categoria</a></li>
 					<% else %>
           	<li><a href="<%= account_path(@application_account) %>">Conta</a></li>
 					<% end %>

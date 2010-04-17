@@ -1,6 +1,5 @@
 class Listing < ActiveRecord::Base
   belongs_to :job
-  has_many :job_listing
 
   before_create :active_listing
 	before_save :generate_code

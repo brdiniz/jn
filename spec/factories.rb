@@ -5,6 +5,10 @@ Factory.define :company do |f|
   f.association :user, :factory => :user
 end
 
+Factory.define :category do |c|
+  c.name "category"
+end
+
 Factory.define :user do |u|
   u.sequence(:login) { |n| "login#{n}" }
   u.password "ABC123"
@@ -22,6 +26,7 @@ Factory.define :job do |j|
   j.title "Ruby on Rails Develpment"
   j.salary_info "Salário Atrativo"
   j.description "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  j.category_name Category.first.name
   j.association :company, :factory => :company
 end
 

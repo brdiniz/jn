@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :sessions
+  map.resources :categories
+
   map.resources :accounts do |account|
     account.associate_professional "associate_professional", :controller => "accounts", :action => "associate_professional", :method => {:get, :post}
     account.disconnect_professional "disconnect_professional/:login_associate", :controller => "accounts", :action => "disconnect_professional"
@@ -12,9 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :users, :only => [:index] 
-  
-  map.resources :sessions
-  
+    
   map.root :controller => :sessions, :action => :new
 
   map.user_alter_password 'users/password', :controller => :users, :action => :password 

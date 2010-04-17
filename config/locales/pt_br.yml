@@ -43,6 +43,8 @@ pt_br:
       tipe: Tipo
       code: "Código"
     models:
+      category: Categoria
+      categories: Categorias
       account: Conta
       accounts: Contas
       job: Vaga
@@ -63,6 +65,7 @@ pt_br:
           "true": Ativada
           "false": Desativada
       job:
+        category_name: Categoria
         title: Título
         salary_info: Benefícios
         description: Descrição
