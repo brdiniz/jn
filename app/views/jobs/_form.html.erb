@@ -1,3 +1,9 @@
+<script>
+$(function() {
+  auto_complete("#job_category_name", "category", "<%= categories_path(:format => "xml") %>");
+}); 
+</script>
+
 	<div class="group">
 	  <%= f.label :category_name, t("activerecord.attributes.job.category_name", :default => "Category Name"), :class => :label %>
 	  <%= f.text_field :category_name, :class => 'text_field', :value => @job.category_name_value %>
