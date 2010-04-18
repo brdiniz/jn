@@ -21,4 +21,18 @@ describe Category do
     c.should_not be_valid
     c.errors.on(:name).should_not be_blank
   end
+
+  it "should order by name" do
+    categories = []
+    categories << Factory(:category, :name => "a")
+    categories << Factory(:category, :name => "d")
+    categories << Factory(:category, :name => "b")
+    categories << Factory(:category, :name => "e")
+
+    categories.sort!
+    categories.delete_at(0).name.should == "a"
+    categories.delete_at(0).name.should == "b"
+    categories.delete_at(0).name.should == "d"
+    categories.delete_at(0).name.should == "e"
+  end
 end
