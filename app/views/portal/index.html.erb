@@ -1,4 +1,4 @@
-<% @listings.each do |listing| -%>
+<% @listings.published.each do |listing| -%>
 <div class="post" id="post-<%= listing.id %>">
 	<h2><%= listing.job.title %> em <%= listing.region %>, <%= listing.location %></h2>
 	<div class="info">
