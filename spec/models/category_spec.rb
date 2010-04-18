@@ -15,8 +15,8 @@ describe Category do
   end
   
   it "should not create a new instance when name exiting" do
-    Factory(:category)
-    c = Factory.build(:category)
+    c1 = Factory(:category)
+    c = Factory.build(:category, :name => c1.name)
     
     c.should_not be_valid
     c.errors.on(:name).should_not be_blank

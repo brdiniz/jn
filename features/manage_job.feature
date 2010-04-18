@@ -5,6 +5,7 @@ Feature: Manage job
 
 	Scenario: Create a new Job
 	  Given I have a new company with name "accountnow"
+		And I have a new category with name "Category_1"
 		And I am on the "accountnow" account showing screen
 		And I follow "Criar Vaga"
 		And I should see "Ações para Vaga"
