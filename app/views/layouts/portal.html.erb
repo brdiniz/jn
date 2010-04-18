@@ -196,13 +196,7 @@ function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!
 					</p>
 			</div>
 		</div>
-		<div id="categories-2" class="widget widget_categories"><h3>Categorias</h3>		
-			<ul>
-				<% for category in Category.all %>
-					<li class="cat-item cat-item-77729"><%= link_to category.name, "#" %> (0)</li>
-				<% end %>
-			</ul>
-		</div>
+		<%= yield :categories %>
 		<div id="twitter-4" class="widget widget_twitter">
 			<h3><a href='http://twitter.com/jobsnw'>Twitter</a></h3>
 			<p>Error: Twitter did not respond. Please wait a few minutes and refresh this page.</p>
