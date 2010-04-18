@@ -23,6 +23,10 @@ class Job < ActiveRecord::Base
     "#{self.id}"
   end
   
+  def category_name_value
+    self.category.name if self.category
+  end
+  
   def associate_category
     c = Category.find_by_name(category_name)
     errors.add(:category_name) unless c
