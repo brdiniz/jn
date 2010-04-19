@@ -3,6 +3,10 @@ class ListingsController < AuthenticateController
   
   belongs_to :account
   belongs_to :job
+  
+  def listing_published_category
+    
+  end
 
   def destroy
     destroy! do |format|

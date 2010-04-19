@@ -1,1 +1,5 @@
-<%= link_to "Início", root_path %> &gt; <%= link_to @category.name, category_list_path(@category) %> &gt; <%= link_to "#{@listing.job.title} em #{@listing.region}, #{@listing.location}", "#respond" %>
+<%= link_to "Início", root_path %> 
+&gt; <%= link_to @category.name, category_list_path(@category) %> 
+<% if @listing %>
+&gt; <%= link_to "#{@listing.job.title} em #{@listing.region}, #{@listing.location}", "#respond" %>
+<% end %>
