@@ -4,6 +4,7 @@ class PortalController < ActionController::Base
   end
   
   def show
+    @category = Category.find(params[:category_id])
     @listing = Listing.published.find(params[:listing_id])
   end
 end

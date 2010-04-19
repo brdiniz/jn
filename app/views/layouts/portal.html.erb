@@ -117,9 +117,6 @@ function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!
 
 	<div id="postpath">	
     <%= yield :navegation %>
-		<!-- a title="Vá para página inicial" href="http://jobs-now.com.br/">Início</a>
-		&gt; <a href="#" title="Categoria" rel="category tag">Desevolvimento .NET</a>
-		&gt; Analista Programador Sênior -->
 	</div>
 
   <%= yield %>
@@ -136,36 +133,7 @@ function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!
 
 </div>
 
-	<!--div id="respond">
-		<form action="#" method="post" id="commentform">
-		<input type='hidden' name='comment_post_ID' value='338' id='comment_post_ID' />
-			<div id="author_info">
-				<div class="row">
-					<input type="text" name="author" id="author" class="textfield" value="" size="24" tabindex="1" />
-					<label for="author" class="small">Nome (obrigatório)</label>
-				</div>
-				<div class="row">
-					<input type="text" name="email" id="email" class="textfield" value="" size="24" tabindex="2" />
-					<label for="email" class="small">E-mail (obrigatório)</label>
-				</div>
-				<div class="row">
-					<input type="text" name="url" id="url" class="textfield" value="" size="24" tabindex="3" />
-					<label for="url" class="small">Curriculo (obrigatório: doc, docx e pdf)</label>
-				</div>
-				<div class="row">
-					<input type="text" name="url" id="url" class="textfield" value="" size="24" tabindex="3" />
-					<label for="url" class="small">Site (opcional: linked-id, blog, twitter...)</label>
-				</div>
-			</div>
-			<div id="submitbox">
-				<div class="submitbutton">
-					<input name="submit" type="submit" id="submit" class="button" tabindex="5" value="Enviar comentário" />
-				</div>
-				<div class="fixed"></div>
-			</div>
-		</form>
-	</div-->
-	
+	<%= yield :respond %>
 
 	<!--div id="postnavi">
 		<span class="prev"></span>

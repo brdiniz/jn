@@ -17,12 +17,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :only => [:index] 
     
   map.root :controller => :sessions, :action => :new
+  map.category_list '/category/:category_id', :controller => :portal, :action => :category_listing 
+  map.job_details '/category/:category_id/listing/:listing_id', :controller => :portal, :action => :show
 
   map.user_alter_password 'users/password', :controller => :users, :action => :password 
   
   map.session_logout 'session/logout', :controller => :sessions, :action => :destroy
-
-  map.job_details '/portal/:listing_id/:job_title', :controller => :portal, :action => :show
 
   # The priority is based upon order of creation: first created -> highest priority.
 

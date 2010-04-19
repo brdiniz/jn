@@ -1,0 +1,33 @@
+<div id="respond">
+	<% form_for :session, :url => sessions_path do |f| -%>
+	<input type='hidden' name='comment_post_ID' value='338' id='comment_post_ID' />
+		<div id="author_info">
+			<div class="row">
+				<input type="text" name="author" id="author" class="textfield" value="" size="24" tabindex="1" />
+				<label for="author" class="small">Nome (obrigatório)</label>
+			</div>
+			<div class="row">
+				<input type="text" name="email" id="email" class="textfield" value="" size="24" tabindex="2" />
+				<label for="email" class="small">E-mail (obrigatório)</label>
+			</div>
+			<div class="row">
+				<input type="text" name="url" id="url" class="textfield" value="" size="24" tabindex="3" />
+				<label for="url" class="small">Curriculo (obrigatório: doc, docx e pdf)</label>
+			</div>
+			<div class="row">
+				<input type="text" name="url" id="url" class="textfield" value="" size="24" tabindex="4" />
+				<label for="url" class="small">Site (opcional: linked-id, blog, twitter...)</label>
+			</div>
+			<div class="row">
+				<textarea cols="50" rows="8" tabindex="5" id="comment" name="comment"></textarea>
+			</div>
+		</div>
+		<div id="submitbox">
+			<div class="submitbutton">
+				<input name="submit" type="submit" id="submit" class="button" tabindex="5" value="Enviar curriculo" />
+			</div>
+			<div class="fixed"></div>
+		</div>
+		<% end %>
+	</form>
+</div>
