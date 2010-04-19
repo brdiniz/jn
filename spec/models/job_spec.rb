@@ -3,9 +3,9 @@ require 'spec_helper'
 describe Job do
   
   it "should create a new instance given valid attributes" do
-    j = Factory.build(:job)
-    j.should be_valid
+    j = Factory(:job)
     j.name.should == j.id.to_s
+    j.category_name_value.should == j.category.name
   end
 
   it "should not create a new instance given invalid attributes" do

@@ -25,6 +25,14 @@ describe Listing do
     l.code.should == "abc123"
   end
   
+  it "should list listings in category" do
+    c = Factory(:category)
+    l = Factory(:listing)
+    listings = Listing.list_jobs_for_category(l.job.category)
+    listings.size.should == 1
+    listings.first.job.category.should == l.job.category
+  end
+  
   it "should verify listing active" do
     l = Factory(:listing, :day_count => 10)
     l.active.should be_true

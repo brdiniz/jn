@@ -52,7 +52,32 @@
       <div class="wat-cf">
         <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_account_job_listing_path(@account, @job, @listing), :class => "button" %> 
         <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", account_job_listing_path, :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
-      </div>      
+      </div>  
+			
+      <p />
+
+			<hr>	      
+			<h1>Candidatos</h1>
+
+      <table class="table" id="listings_table">
+				<th>Nome</th>
+				<th>E-mail</th>
+				<th>Site</th>
+				<th>Data do envio</th>
+				<th></th>
+				<% @listing.candidates.each do |candidate| %>
+					<tr class='<%= cycle("odd", "even") %>'>
+						<td><%= candidate.name %></td>
+						<td><%= candidate.email %></td>
+						<td><%= candidate.site %></td>
+						<td><%= candidate.created_at %></td>
+						<td class="last">
+							&nbsp;
+						</td>
+					</tr>
+				<% end %>
+      </table>
+
     </div>
   </div>
 </div>

@@ -18,4 +18,11 @@ describe PortalController do
     assigns[:listing].should == l
     assigns[:category].should == l.job.category
   end
+  
+  it "should list listing in category" do
+    l = Factory(:listing)
+    
+    get :category_listing, :category_id => l.job.category.id
+    assigns[:listings].should == Listing.list_jobs_for_category(l.job.category)
+  end
 end

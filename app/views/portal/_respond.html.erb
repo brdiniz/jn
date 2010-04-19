@@ -1,5 +1,12 @@
 <div id="respond">
-	<% form_for :session, :url => listing_candidates_path(@listing) do |f| -%>
+  <div class="flash">
+    <% flash.each do |type, message| -%>
+      <div class="message <%= type %>">
+        <p><%= message %></p>
+      </div>
+    <% end -%>
+  </div>
+	<% form_for :candidate, :url => listing_candidates_path(@listing) do |f| -%>
 		<div id="author_info">
 			<div class="row">
 			  <%= f.text_field :name, :class => 'textfield' %>
@@ -18,7 +25,7 @@
 			  <%= f.label :site, t("activerecord.attributes.candidate.site", :default => "Site"), :class => "small" %>
 			</div>
 			<div class="row">
-			  <%= f.text_area :comment, :cols => 50, :rows => 8, :style => "width:601px" %>
+			  <%= f.text_area :observation, :cols => 50, :rows => 8, :style => "width:601px" %>
 			</div>
 		</div>
 		<div id="submitbox">
