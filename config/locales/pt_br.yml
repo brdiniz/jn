@@ -55,7 +55,7 @@ pt_br:
       user: Usuário
     attributes:
       candidate:
-        site: "Site (opcional: linked-id, blog, twitter...)"
+        site: "Site (opcional: linked-in, blog, twitter...)"
       listing:
         code: Código
         region: Região
