@@ -12,6 +12,10 @@ class Listing < ActiveRecord::Base
 	validates_presence_of :job, :location, :region, :email
   validates_uniqueness_of :code, :scope => :job_id
   
+  def self.list_jobs_for_category(category)
+    self.published.find(:all, :joins => :job, :conditions => { :jobs => { :category_id => category.id } })
+  end
+  
   def active
     d = self.actived_at.to_date - Time.now.to_date
     self.day_count + d >= 0

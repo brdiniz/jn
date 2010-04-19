@@ -10,7 +10,7 @@ class PortalController < ActionController::Base
   
   def category_listing
     @category = Category.find(params[:category_id])
-    @listings = Listing.published.find(:all, :joins => :job, :conditions => { :jobs => { :category_id => @category.id } })
+    @listings = Listing.list_jobs_for_category(@category)
   end
 end
 
