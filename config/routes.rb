@@ -1,6 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :sessions
   map.resources :categories
+  
+  map.resources :listings do |listing|
+    listing.resources :candidates, :only => [:new, :create]
+  end
 
   map.resources :accounts do |account|
     account.associate_professional "associate_professional", :controller => "accounts", :action => "associate_professional", :method => {:get, :post}

@@ -54,6 +54,8 @@ pt_br:
       job_listings: Vagas anunciadas
       user: Usuário
     attributes:
+      candidate:
+        site: "Site (opcional: linked-id, blog, twitter...)"
       listing:
         code: Código
         region: Região

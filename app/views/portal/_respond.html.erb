@@ -1,25 +1,24 @@
 <div id="respond">
-	<% form_for :session, :url => sessions_path do |f| -%>
-	<input type='hidden' name='comment_post_ID' value='338' id='comment_post_ID' />
+	<% form_for :session, :url => listing_candidates_path(@listing) do |f| -%>
 		<div id="author_info">
 			<div class="row">
-				<input type="text" name="author" id="author" class="textfield" value="" size="24" tabindex="1" />
-				<label for="author" class="small">Nome (obrigatório)</label>
+			  <%= f.text_field :name, :class => 'textfield' %>
+			  <%= f.label :name, t("activerecord.attributes.candidate.name", :default => "Name"), :class => "small" %>
 			</div>
 			<div class="row">
-				<input type="text" name="email" id="email" class="textfield" value="" size="24" tabindex="2" />
-				<label for="email" class="small">E-mail (obrigatório)</label>
+			  <%= f.text_field :email, :class => 'textfield' %>
+			  <%= f.label :email, t("activerecord.attributes.candidate.email", :default => "Email"), :class => "small" %>
 			</div>
 			<div class="row">
 				<input type="text" name="url" id="url" class="textfield" value="" size="24" tabindex="3" />
 				<label for="url" class="small">Curriculo (obrigatório: doc, docx e pdf)</label>
 			</div>
 			<div class="row">
-				<input type="text" name="url" id="url" class="textfield" value="" size="24" tabindex="4" />
-				<label for="url" class="small">Site (opcional: linked-id, blog, twitter...)</label>
+			  <%= f.text_field :site, :class => 'textfield' %>
+			  <%= f.label :site, t("activerecord.attributes.candidate.site", :default => "Site"), :class => "small" %>
 			</div>
 			<div class="row">
-				<textarea cols="50" rows="8" tabindex="5" id="comment" name="comment"></textarea>
+			  <%= f.text_area :comment, :cols => 50, :rows => 8 %>
 			</div>
 		</div>
 		<div id="submitbox">
