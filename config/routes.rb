@@ -1,10 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :sessions
   map.resources :categories
-  
-  map.resources :listings do |listing|
-    listing.resources :candidates, :only => [:new, :create]
-  end
 
   map.resources :accounts do |account|
     account.associate_professional "associate_professional", :controller => "accounts", :action => "associate_professional", :method => {:get, :post}
@@ -21,6 +17,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :only => [:index] 
     
   map.root :controller => :sessions, :action => :new
+  
+  map.new_listing_candidates '/listing/:listing_id/candidates/new', :controller => :candidates, :action => :new
+  map.listing_candidates '/listing/:listing_id/candidates', :controller => :candidates, :action => :create
+  
   map.category_list '/category/:category_id', :controller => :portal, :action => :category_listing 
   map.job_details '/category/:category_id/listing/:listing_id', :controller => :portal, :action => :show
 

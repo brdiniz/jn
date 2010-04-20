@@ -1,11 +1,4 @@
 <div id="respond">
-  <div class="flash">
-    <% flash.each do |type, message| -%>
-      <div class="message <%= type %>">
-        <p><%= message %></p>
-      </div>
-    <% end -%>
-  </div>
 	<% form_for :candidate, :url => listing_candidates_path(@listing) do |f| -%>
 		<div id="author_info">
 			<div class="row">

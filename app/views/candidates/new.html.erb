@@ -1,0 +1,30 @@
+<% form_for :candidate, :url => listing_candidates_path(@listing) do |f| -%>
+	<div id="author_info">
+		<div class="row">
+		  <%= f.text_field :name, :class => 'textfield' %>
+		  <%= f.label :name, t("activerecord.attributes.candidate.name", :default => "Name"), :class => "small" %>
+		</div>
+		<div class="row">
+		  <%= f.text_field :email, :class => 'textfield' %>
+		  <%= f.label :email, t("activerecord.attributes.candidate.email", :default => "Email"), :class => "small" %>
+		</div>
+		<div class="row">
+			<input type="text" name="url" id="url" class="textfield" value="" size="24" tabindex="3" />
+			<label for="url" class="small">Currículo (obrigatório: doc, docx ou pdf)</label>
+		</div>
+		<div class="row">
+		  <%= f.text_field :site, :class => 'textfield' %>
+		  <%= f.label :site, t("activerecord.attributes.candidate.site", :default => "Site"), :class => "small" %>
+		</div>
+		<div class="row">
+		  <%= f.text_area :observation, :cols => 50, :rows => 8, :style => "width:450px" %>
+		</div>
+	</div>
+	<div id="submitbox">
+		<div class="submitbutton">
+			<input name="submit" type="submit" id="submit" class="button" tabindex="5" value="Enviar curriculo" />
+			<a href="#" class="lbAction" rel="deactivate"><button>Cancel</button></a>
+		</div>
+		<div class="fixed"></div>
+	</div>
+	<% end %>
