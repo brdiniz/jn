@@ -8,7 +8,7 @@
 		<span class="author">
 			<a href="#" title="<%= listing.job.company.name %>"><%= listing.job.company.name %></a>
 		</span>									
-		<span class="addcomment"><%= link_to "Enviar curriculo", job_details_path(listing.job.category, listing) %></span>
+		<span class="addcomment"><%= link_to "Enviar Curriculo", new_listing_candidates_path(listing), :class => "lbOn" %></span>
 		<div class="fixed"></div>
 	</div>
 	<div class="content">
