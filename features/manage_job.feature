@@ -29,3 +29,11 @@ Feature: Manage job
 		And I should see "Título é um campo obrigatório, é muito curto (não menos do que 10 caracteres)"
 		And I should see "Benefícios é um campo obrigatório, é muito curto (não menos do que 10 caracteres)"
 		And I should see "Descrição é um campo obrigatório, é muito curto (não menos do que 50 caracteres)"
+		
+	Scenario: List a Jobs
+		Given I have a new job with title "Development Ruby on Rails" in account with name "accountnow"
+		And I have a new job with title "Scrum Master" in account with name "accountnow"
+		And I am on the "accountnow" account showing screen
+		Then I should see "Vagas"
+		And I should see "Development Ruby on Rails"
+		And I should see "Scrum Master"

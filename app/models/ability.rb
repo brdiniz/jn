@@ -29,7 +29,7 @@ class Ability
       can :manage_company, Company do |c|
         c.professionals.include?(user.person) || c == user.person
       end
-
+      
       can :my_user, User do |u|
         u || (u.login == user.login)
       end
