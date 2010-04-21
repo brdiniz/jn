@@ -1,27 +1,5 @@
 <% @listings.each do |listing| -%>
-<div class="post" id="post-<%= listing.id %>">
-	<h2>
-		<%= link_to "#{listing.job.title} em #{listing.region}, #{listing.location}", job_details_path(listing.job.category, listing), :class => 'title' %>
-	</h2>
-	<div class="info">
-		<span class="date"><%= listing.created_at.strftime("%d/%m/%Y") %></span>
-		<span class="author">
-			<a href="#" title="<%= listing.job.company.name %>"><%= listing.job.company.name %></a>
-		</span>									
-		<span class="addcomment"><%= link_to "Enviar Curriculo", new_listing_candidates_path(listing), :class => "lbOn" %></span>
-		<div class="fixed"></div>
-	</div>
-	<div class="content">
-		<div class='snap_preview'>
-			<p><%= listing.job.description.gsub("\r\n", "<br />") %><p/>
-			<p><strong>Salário:</strong> <%= listing.job.salary_info %></p>
-			<p><strong>Empresa:</strong> <%= listing.job.company.name %></p>
-			<p><strong>Código:</strong> <%= listing.code %></p>
-		</div>						
-		<div class="fixed"></div>
-	</div>
-	<div class="fixed"></div>
-</div>
+<%= render :partial => "listing_job", :locals => {:listing => listing} %>
 <% end %>
 
 <% content_for :categories, render(:partial => 'categories') -%>

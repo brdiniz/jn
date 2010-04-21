@@ -15,14 +15,13 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :users, :only => [:index] 
+  
+  map.new_candidates '/listing/:listing_id/candidates/new', :controller => :candidates, :action => :new
+  map.candidates '/listing/:listing_id/candidates', :controller => :candidates, :action => :create
     
   map.root :controller => :sessions, :action => :new
   
-  map.new_listing_candidates '/listing/:listing_id/candidates/new', :controller => :candidates, :action => :new
-  map.listing_candidates '/listing/:listing_id/candidates', :controller => :candidates, :action => :create
-  
   map.category_list '/category/:category_id', :controller => :portal, :action => :category_listing 
-  map.job_details '/category/:category_id/listing/:listing_id', :controller => :portal, :action => :show
 
   map.user_alter_password 'users/password', :controller => :users, :action => :password 
   

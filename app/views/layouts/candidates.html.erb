@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="pt-br">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- CSS -->
+<link rel="stylesheet" href="/stylesheets/lightbox/lightbox.css" media="screen,projection" type="text/css" />
+
+<!-- JavaScript -->
+<script type="text/javascript" src="/javascripts/prototype.js"></script>
+<script type="text/javascript" src="/javascripts/lightbox.js"></script>
+
+<title>PORTAL - Jobs-now.com.br</title>
+	<!-- default style -->
+	<link rel="stylesheet" href="http://s2.wp.com/wp-content/themes/pub/inove/style.css?m=1269002217g" type="text/css" media="screen" />
+	<!-- for translations -->
+		<!--[if IE]>
+		<link rel="stylesheet" href="http://s2.wp.com/wp-content/themes/pub/inove/ie.css?m=1255093192g" type="text/css" media="screen" />
+	<![endif]-->
+	<!-- style END -->
+
+	<!-- script START -->
+	<script type="text/javascript" src="http://s2.wp.com/wp-content/themes/pub/inove/js/base.js?m=1255093192g"></script>
+	<script type="text/javascript" src="http://s2.wp.com/wp-content/themes/pub/inove/js/menu.js?m=1255093192g"></script>
+	<!-- script END -->	
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/h4/global.css?m=1256671583g" type="text/css" />
+<script type='text/javascript' src='http://s0.wp.com/wp-includes/js/comment-reply.js?m=1255093184g&amp;ver=20090102'></script>
+<script type='text/javascript' src='http://s1.wp.com/wp-includes/js/jquery/jquery.js?m=1255093183g&amp;ver=1.3.2'></script>
+<link rel='index' title='Jobs-now' href='http://www.jobs-now.com.br' />
+<meta name="generator" content="WordPress.com" />
+<meta name='geo.position' content='-22.317000;-49.067000' />
+<meta name='ICBM' content='-22.317000, -49.067000' />
+<script defer="defer" id="snap_preview_anywhere" type="text/javascript" src="http://spa.snap.com/snap_preview_anywhere.js?ap=0&amp;si=1&amp;sb=1&amp;key=e5a3c1e6dff5de35b1c6e7c470411886&amp;domain=&amp;fl=wordpress&amp;pub=pub-2311827-www.wordpress.com&amp;es=all&amp;lang=pt-br"></script>
+
+</head>
+
+<body>
+<!-- wrap START -->
+<div id="wrap">
+
+<!-- container START -->
+<div id="container"  >
+
+<!-- header START -->
+<div id="header">
+
+	<!-- banner START -->
+		<!-- banner END -->
+
+	<div id="caption">
+		<h1 id="title"><a href="http://www.jobs-now.com.br/">Jobs-now.com.br</a></h1>
+		<div id="tagline">Trabalho, Vagas, Empregos TI, Vagas Tecnologia</div>
+	</div>
+
+	<div class="fixed"></div>
+</div>
+<!-- header END -->
+
+<!-- navigation START -->
+<div id="navigation">
+	<!-- menus START -->
+	<ul id="menus">
+		<li class="page_item"><a class="home" title="Início" href="/portal">Início</a></li>
+		<li class="page_item page-item-2"><a href="/portal" title="Buscar">Buscar Vagas</a></li>
+		<li class="page_item page-item-27"><a href="/portal" title="Anunciar">Anunciar Vagas</a></li>
+	</ul>
+	<!-- menus END -->
+
+	<!-- searchbox START -->
+	<div id="searchbox">
+		<form action="#" method="get">
+			<div class="content">
+				<input type="text" class="textfield" name="s" size="24" value="" />
+				<input type="submit" class="button" value="" />
+			</div>
+		</form>
+	</div>
+<script type="text/javascript">
+//<![CDATA[
+	var searchbox = MGJS.$("searchbox");
+	var searchtxt = MGJS.getElementsByClassName("textfield", "input", searchbox)[0];
+	var searchbtn = MGJS.getElementsByClassName("button", "input", searchbox)[0];
+	var tiptext = "Digite um texto para pesquisar...";
+	if(searchtxt.value == "" || searchtxt.value == tiptext) {
+		searchtxt.className += " searchtip";
+		searchtxt.value = tiptext;
+	}
+	searchtxt.onfocus = function(e) {
+		if(searchtxt.value == tiptext) {
+			searchtxt.value = "";
+			searchtxt.className = searchtxt.className.replace(" searchtip", "");
+		}
+	}
+	searchtxt.onblur = function(e) {
+		if(searchtxt.value == "") {
+			searchtxt.className += " searchtip";
+			searchtxt.value = tiptext;
+		}
+	}
+	searchbtn.onclick = function(e) {
+		if(searchtxt.value == "" || searchtxt.value == tiptext) {
+			return false;
+		}
+	}
+//]]>
+</script>
+	<!-- searchbox END -->
+
+	<div class="fixed"></div>
+</div>
+<!-- navigation END -->
+
+<!-- content START -->
+<div id="content">
+
+	<!-- main START -->
+	<div id="main">
+
+
+	<div id="postpath">	
+    <%= yield :navegation %>
+	</div>
+
+  <%= yield %>
+
+	<script type="text/javascript" src="http://s2.wp.com/wp-content/themes/pub/inove/js/comment.js?m=1265732992g&amp;1"></script>
+
+	<%= yield :respond %>
+
+	<!--div id="postnavi">
+		<span class="prev"></span>
+		<span class="next"><a href="#" rel="prev">Próxima Vaga</a></span>
+		<div class="fixed"></div>
+	</div -->
+
+
+	</div>
+	<!-- main END -->
+
+	
+<!-- sidebar START -->
+<div id="sidebar">
+
+<!-- sidebar north START -->
+<div id="northsidebar" class="sidebar">
+
+	<!-- feeds -->
+
+	<!-- showcase -->
+	
+		<%= yield :categories %>
+	</div>
+</div>
+<!-- sidebar END -->
+	<div class="fixed"></div>
+</div>
+<!-- content END -->
+
+<!-- footer START -->
+<div id="footer">
+	<a id="gotop" href="#" onclick="MGJS.goTop();return false;">Topo</a>
+	<a id="powered" href="http://wordpress.com/">WordPress</a>
+	<div id="copyright">
+		Copyright &copy; 2010 Jobs-now.com.br!	</div>
+	<div id="themeinfo">
+		<a rel="generator" href="http://wordpress.com/">Blog no WordPress.com</a>. Tema de <a href="http://www.neoease.com/">NeoEase</a>. Valid <a href="http://validator.w3.org/check?uri=referer">XHTML 1.1</a> e <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">CSS 3</a>. 	</div>
+</div>
+<!-- footer END -->
+
+</div>
+<!-- container END -->
+</div>
+<!-- wrap END -->
+
+
+<script type="text/javascript" src="http://wordpresscom.skimlinks.com/api/wordpress.js"></script>
+<script type="text/javascript">
+var skimlinks_pub_id = "725X1342";
+var skimlinks_sitename = "www.jobs-now.com.br";
+var skimlinks_domain = "go2.wordpress.com";
+skimlinks();
+</script><script type="text/javascript">_qacct='p-18-mFEk4J448M';_qoptions={labels:'adt.0,language.pt-br,posttag.3g,posttag.compartilhamento,posttag.internet,posttag.network-manager,posttag.rede,posttag.roteador,posttag.ubuntu,posttag.windows'};</script>
+<script type="text/javascript" src="//secure.quantserve.com/quant.js"></script>
+<noscript><p><img class="robots-nocontent" src="//secure.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=adt.0%2Clanguage.pt-br%2Cposttag.3g%2Cposttag.compartilhamento%2Cposttag.internet%2Cposttag.network-manager%2Cposttag.rede%2Cposttag.roteador%2Cposttag.ubuntu%2Cposttag.windows" style="display:none" height="1" width="1" alt="" /></p></noscript>
+<script src="http://s.stats.wordpress.com/w.js?19" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'10038628','v':'wpcom','user_id':'0','post':'338','subd':'jobs-now.com.br'});
+ex_go({'crypt':'RDZ8LFkxbXFpUUhpYm5dQSx+QkxOY252U1VsUkU9ej1paTN3SHB2cmxNLiUzVzRiKzV6YnRLZ1pZMjMtc3UzMHZ6TnclNUk3YnNEbEJUaUxCWVYlOURhZTFLS2hKL0tqOS9BdG53ZmFaWDE/cVtXei5mNTcwa1dxM0pXRW4vcEI1RStCMDgwJS1ofkxWVXVwTGQ/RStdZD1YVi04eS11dWNWNVtzZldkOUk9YUYuLlgxdml0YjVBbjNwNENFeSwrN3xoW0dBb3k4UzJvSkFGcC5JOGIyWGgtXVV5L198aHVRbkc/P0NvOUs='});
+addLoadEvent(function(){linktracker_init('10038628',338);});
+	</script>
+
+</body>
+</html>
