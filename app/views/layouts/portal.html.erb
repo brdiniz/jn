@@ -118,9 +118,17 @@ function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!
 <!-- content START -->
 <div id="content">
 
-	<!-- main START -->
+	<!-- main START -->  
 	<div id="main">
-
+		<div id="wrapper" class="wat-cf">
+	    <div class="flash">
+	      <% flash.each do |type, message| -%>
+	        <div class="message <%= type %>">
+	          <p><%= message %></p>
+	        </div>
+	      <% end -%>
+	    </div>
+		</div>		
 
 	<div id="postpath">	
     <%= yield :navegation %>
