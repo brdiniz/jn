@@ -9,7 +9,7 @@ class PortalController < ActionController::Base
   end
   
   def category_listing
-    @category = Category.find(params[:category_id])
+    @category = Category.find_by_name(params[:category_id])
     @listings = Listing.list_jobs_for_category(@category)
   end
 end

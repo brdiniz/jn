@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
     
   map.root :controller => :sessions, :action => :new
   
-  map.category_list '/category/:category_id', :controller => :portal, :action => :category_listing 
+  map.category_list ':category_id', :controller => :portal, :action => :category_listing, :requirements => {:category_id => /.*/}
 
   map.user_alter_password 'users/password', :controller => :users, :action => :password 
   

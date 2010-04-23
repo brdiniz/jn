@@ -11,7 +11,7 @@ class CandidatesController < ActionController::Base
     @candidate = Candidate.new(:listing => @listing, :name => params[:candidate][:name], :observation => params[:candidate][:observation], :site => params[:candidate][:site], :email => params[:candidate][:email])
     if @candidate.save
       flash[:notice] = 'Currículo enviado com sucesso!'
-      redirect_to(category_list_path(@listing.job.category))
+      redirect_to(category_list_path(@listing.job.category.name))
     else
         render :action => "new"
     end

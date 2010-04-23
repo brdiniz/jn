@@ -1,7 +1,7 @@
 <div id="categories-2" class="widget widget_categories"><h3>Categorias</h3>		
 	<ul>
 		<% for category in Category.all %>
-			<li class="cat-item cat-item-<%= category.id %>"><%= link_to category.name, category_list_path(category) %> (<%= Listing.list_jobs_for_category(category).size %>)</li>
+			<li class="cat-item cat-item-<%= category.id %>"><%= link_to category.name, category_list_path(category.name) %> (<%= Listing.list_jobs_for_category(category).size %>)</li>
 		<% end %>
 	</ul>
 </div>
