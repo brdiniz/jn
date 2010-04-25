@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>  
+	<head>  
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"  />  
+	</head>
+<body> 
+	<%= @candidate.name %>, acabou de se enviar seu currículo para a vaga: <%= @listing.code %> - <%= @listing.job.title %>.
+	<br />
+	Em anexo seu currículo para analise.
+
+	<%= "<br/>Site: #{@candidate.site}" if @candidate.site %>
+
+	<%= "<br/>Informações complementares: <br /><br /> #{@candidate.observation}" if @candidate.observation %>
+</body>
+</html>

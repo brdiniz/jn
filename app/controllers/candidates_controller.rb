@@ -13,7 +13,7 @@ class CandidatesController < ActionController::Base
       flash[:notice] = 'Currículo enviado com sucesso!'
       redirect_to(category_list_path(@listing.job.category.name))
     else
-        render :action => "new"
+      render :action => "new"
     end
   end 
 end

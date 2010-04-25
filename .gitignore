@@ -9,3 +9,4 @@ coverage/**
 coverage.data
 *.swp
 rerun.txt
+config/email.yml
