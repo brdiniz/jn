@@ -10,6 +10,10 @@
 
 	<%= "<br/>Site: #{@candidate.site}" if @candidate.site %>
 
-	<%= "<br/>Informações complementares: <br /><br /> #{@candidate.observation}" if @candidate.observation %>
+	<%= "<br/>Informações complementares: <br /><br /> #{@candidate.observation.gsub("\r\n", "<br />")}" if @candidate.observation %>
+	
+	obs: Não nos responsabilizamos pelos anexos encaminhados pelos candidatos, antes de abrir faça um diagnostico com algum antivirus.
+	
+	Equipe Jobs-now
 </body>
 </html>
